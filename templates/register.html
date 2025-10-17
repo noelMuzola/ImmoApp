@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscription - ImmoLuxe</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/register.css') }}"> 
+    
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <a href="{{ url_for('home') }}" class="logo">
+                    <i class="fas fa-home"></i>
+                    ImmoApp
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="container">
+            <div class="auth-container">
+                <div class="auth-form-container">
+                    <div class="auth-header">
+                        <h1>Créer un compte</h1>
+                        <p>Rejoignez ImmoLuxe pour accéder à toutes nos fonctionnalités</p>
+                    </div>
+                    
+                    <form class="auth-form" action="{{ url_for('register') }}" method="POST">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName">Prénom *</label>
+                                <input type="text" id="firstName" name="prenom" required>
+                                <div class="error-message" id="firstNameError">Veuillez entrer votre prénom</div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="lastName">Nom *</label>
+                                <input type="text" id="lastName" name="nom" required>
+                                <div class="error-message" id="lastNameError">Veuillez entrer votre nom</div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email">Adresse email *</label>
+                                <input type="email" id="email" name="email" required>
+                                <div class="error-message" id="emailError">Veuillez entrer une adresse email valide</div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="phone">Téléphone</label>
+                                <input type="tel" id="phone" name="phone" placeholder="Ex: +33 6 12 34 56 78">
+                                <div class="error-message" id="phoneError">Veuillez entrer un numéro valide</div>
+                            </div>
+                        </div>
+                        
+                        <!-- <div class="form-row">
+                            <div class="form-group">
+                                <label for="userType">Je suis *</label>
+                                <select id="userType" name="userType" required>
+                                    <option value="">Sélectionnez un profil</option>
+                                    <option value="particulier">Particulier</option>
+                                    <option value="proprietaire">Propriétaire</option>
+                                    <option value="agent">Agent immobilier</option>
+                                    <option value="acheteur">Acheteur/Locataire</option>
+                                </select>
+                                <div class="error-message" id="userTypeError">Veuillez sélectionner votre profil</div>
+                            </div>
+                        </div>
+                         -->
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="password">Mot de passe *</label>
+                                <div class="password-input">
+                                    <input type="password" id="password" name="password" required>
+                                    <button type="button" class="toggle-password" id="togglePassword">
+                                        <i class="far fa-eye"></i>
+                                    </button>
+                                    <div class="password-strength">
+                                        <div class="password-strength-bar" id="passwordStrengthBar"></div>
+                                    </div>
+                                    <div class="password-strength-text" id="passwordStrengthText"></div>
+                                    <div class="error-message" id="passwordError">8 caractères min, majuscule, minuscule, chiffre</div>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="confirmPassword">Confirmation *</label>
+                                <div class="password-input">
+                                    <input type="password" id="confirmPassword" name="confirmPassword" required>
+                                    <button type="button" class="toggle-password" id="toggleConfirmPassword">
+                                        <i class="far fa-eye"></i>
+                                    </button>
+                                    <div class="error-message" id="confirmPasswordError">Les mots de passe ne correspondent pas</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="terms" name="terms" required>
+                            <label for="terms">J'accepte les <a href="#">conditions générales</a> et la <a href="#">politique de confidentialité</a> *</label>
+                        </div>
+                        <div class="error-message" id="termsError">Vous devez accepter les conditions générales</div>
+                        
+                        <button type="submit" class="btn btn-primary">Créer mon compte</button>
+                    </form>
+                    
+                    <div class="auth-footer">
+                        <p>Vous avez déjà un compte ? <a href="{{ url_for('login') }}">Connectez-vous</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>ImmoLuxe</h3>
+                    <p>Votre portail immobilier de confiance pour trouver la maison de vos rêves.</p>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Liens rapides</h3>
+                    <ul>
+                        <li><a href="#">Accueil</a></li>
+                        <li><a href="#">Biens</a></li>
+                        <li><a href="#">Publier</a></li>
+                        <li><a href="#">Recherches</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Contact</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Avenue de France, Paris</li>
+                        <li><i class="fas fa-phone"></i> +33 1 23 45 67 89</li>
+                        <li><i class="fas fa-envelope"></i> contact@immoluxe.fr</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 ImmoLuxe. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Fonctionnalité d'affichage/masquage du mot de passe
+        const togglePassword = document.getElementById('togglePassword');
+        const toggleConfirmPassword = document.getElementById('toggleConfirmPassword');
+        const passwordInput = document.getElementById('password');
+        const confirmPasswordInput = document.getElementById('confirmPassword');
+        
+        togglePassword.addEventListener('click', function() {
+            const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+            passwordInput.setAttribute('type', type);
+            this.innerHTML = type === 'password' ? '<i class="far fa-eye"></i>' : '<i class="far fa-eye-slash"></i>';
+        });
+        
+        toggleConfirmPassword.addEventListener('click', function() {
+            const type = confirmPasswordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+            confirmPasswordInput.setAttribute('type', type);
+            this.innerHTML = type === 'password' ? '<i class="far fa-eye"></i>' : '<i class="far fa-eye-slash"></i>';
+        });
+        
+        // Vérification de la force du mot de passe
+        passwordInput.addEventListener('input', function() {
+            const password = this.value;
+            const strengthBar = document.getElementById('passwordStrengthBar');
+            const strengthText = document.getElementById('passwordStrengthText');
+            
+            // Réinitialiser
+            strengthBar.className = 'password-strength-bar';
+            strengthText.textContent = '';
+            
+            if (password.length === 0) {
+                return;
+            }
+            
+            // Calcul de la force
+            let strength = 0;
+            
+            // Longueur
+            if (password.length > 5) strength += 1;
+            
+            // Présence de minuscules et majuscules
+            if (password.match(/([a-z].*[A-Z])|([A-Z].*[a-z])/)) strength += 1;
+            
+            // Présence de chiffres
+            if (password.match(/([0-9])/)) strength += 1;
+            
+            // Présence de caractères spéciaux
+            if (password.match(/([!,@,#,$,%,^,&,*,?,_,~])/)) strength += 1;
+            
+            // Mise à jour de l'interface
+            if (password.length < 6) {
+                strengthBar.classList.add('strength-weak');
+                strengthText.textContent = 'Faible';
+                strengthText.style.color = '#e74c3c';
+            } else if (strength === 2) {
+                strengthBar.classList.add('strength-weak');
+                strengthText.textContent = 'Faible';
+                strengthText.style.color = '#e74c3c';
+            } else if (strength === 3) {
+                strengthBar.classList.add('strength-medium');
+                strengthText.textContent = 'Moyen';
+                strengthText.style.color = '#f39c12';
+            } else if (strength >= 4) {
+                strengthBar.classList.add('strength-strong');
+                strengthText.textContent = 'Fort';
+                strengthText.style.color = '#2ecc71';
+            }
+        });
+        
+        // Validation du formulaire
+        document.getElementById('registrationForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            let isValid = true;
+            
+            // Validation des champs requis
+            const firstName = document.getElementById('firstName');
+            const lastName = document.getElementById('lastName');
+            const email = document.getElementById('email');
+            const userType = document.getElementById('userType');
+            const password = document.getElementById('password');
+            const confirmPassword = document.getElementById('confirmPassword');
+            const terms = document.getElementById('terms');
+            
+            // Réinitialiser les messages d'erreur
+            document.querySelectorAll('.error-message').forEach(el => {
+                el.style.display = 'none';
+            });
+            document.querySelectorAll('input, select').forEach(el => {
+                el.classList.remove('error');
+            });
+            
+            // Validation prénom
+            if (!firstName.value.trim()) {
+                document.getElementById('firstNameError').style.display = 'block';
+                firstName.classList.add('error');
+                isValid = false;
+            }
+            
+            // Validation nom
+            if (!lastName.value.trim()) {
+                document.getElementById('lastNameError').style.display = 'block';
+                lastName.classList.add('error');
+                isValid = false;
+            }
+            
+            // Validation email
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email.value)) {
+                document.getElementById('emailError').style.display = 'block';
+                email.classList.add('error');
+                isValid = false;
+            }
+            
+            // Validation type d'utilisateur
+            if (!userType.value) {
+                document.getElementById('userTypeError').style.display = 'block';
+                userType.classList.add('error');
+                isValid = false;
+            }
+            
+            // Validation mot de passe
+            const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/;
+            if (!passwordRegex.test(password.value)) {
+                document.getElementById('passwordError').style.display = 'block';
+                password.classList.add('error');
+                isValid = false;
+            }
+            
+            // Validation confirmation mot de passe
+            if (password.value !== confirmPassword.value) {
+                document.getElementById('confirmPasswordError').style.display = 'block';
+                confirmPassword.classList.add('error');
+                isValid = false;
+            }
+            
+            // Validation conditions générales
+            if (!terms.checked) {
+                document.getElementById('termsError').style.display = 'block';
+                isValid = false;
+            }
+            
+            // Si le formulaire est valide
+            if (isValid) {
+                // Simulation d'envoi réussi
+                alert('Votre compte a été créé avec succès! Vous allez être redirigé vers la page de connexion.');
+                this.reset();
+                
+                // Réinitialiser la barre de force du mot de passe
+                document.getElementById('passwordStrengthBar').className = 'password-strength-bar';
+                document.getElementById('passwordStrengthText').textContent = '';
+            }
+        });
+        
+        // Connexion avec les réseaux sociaux
+        document.querySelectorAll('.social-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const platform = this.classList.contains('google-btn') ? 'Google' : 'Facebook';
+                alert(`Connexion avec ${platform} (Cette fonctionnalité sera pleinement opérationnelle avec le backend)`);
+            });
+        });
+    </script>
+</body>
+</html>

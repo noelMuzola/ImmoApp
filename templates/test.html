@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Prédiction de Prix - ImmoApp</title>
+  <link rel="icon" href="{{ url_for('static', filename='logo.png') }}">
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      background-color: #f8f9fc;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      width: 80%;
+      max-width: 900px;
+      background-color: #fff;
+      margin: 50px auto;
+      border-radius: 15px;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+    }
+
+    header {
+      text-align: center;
+      padding: 20px;
+      background-color: #fff;
+      border-bottom: 3px solid #f18b00;
+    }
+
+    header h1 {
+      color: #f18b00;
+      font-size: 26px;
+      margin: 0;
+    }
+
+    form {
+      padding: 30px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-gap: 20px;
+    }
+
+    label {
+      font-weight: 600;
+      color: #333;
+    }
+
+    select, input, textarea {
+      width: 100%;
+      padding: 8px 10px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 14px;
+      outline: none;
+      transition: all 0.3s ease;
+    }
+
+    input[type="range"] {
+      width: 100%;
+    }
+
+    select:focus, input:focus {
+      border-color: #f18b00;
+    }
+
+    .range-value {
+      font-weight: bold;
+      color: #f18b00;
+    }
+
+    .btn {
+      grid-column: 1 / -1;
+      background-color: #f18b00;
+      color: white;
+      padding: 12px;
+      border: none;
+      border-radius: 10px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .btn:hover {
+      background-color: #d57900;
+    }
+
+    .result {
+      grid-column: 1 / -1;
+      text-align: center;
+      font-size: 18px;
+      font-weight: 600;
+      color: #333;
+      margin-top: 10px;
+    }
+
+    .result span {
+      color: #f18b00;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>🏠 ImmoApp — Estimation du Prix</h1>
+    </header>
+
+    <form id="predictForm">
+      <div>
+        <label>Commune</label>
+        <input type="text" id="commune" placeholder="Ex: Limete" required />
+      </div>
+
+      <div>
+        <label>Quartier</label>
+        <input type="text" id="quartier" placeholder="Ex: Mandradele" required />
+      </div>
+
+      <div>
+        <label>Nombre de chambres : <span id="chambreVal" class="range-value">3</span></label>
+        <input type="range" id="chambre" min="1" max="10" value="3" />
+      </div>
+
+      <div>
+        <label>Cuisine : <span id="cuisineVal" class="range-value">1</span></label>
+        <input type="range" id="cuisine" min="0" max="3" value="1" />
+      </div>
+
+      <div>
+        <label>Salon : <span id="salonVal" class="range-value">1</span></label>
+        <input type="range" id="salon" min="0" max="3" value="1" />
+      </div>
+
+      <div>
+        <label>Toilette intérieure : <span id="toiletteVal" class="range-value">1</span></label>
+        <input type="range" id="toilette" min="0" max="3" value="1" />
+      </div>
+
+      <div>
+        <label>Design (1 à 10) : <span id="designVal" class="range-value">5</span></label>
+        <input type="range" id="design" min="1" max="10" value="5" />
+      </div>
+
+      <button type="submit" class="btn">💰 Estimer le prix</button>
+
+      <div class="result" id="resultat"></div>
+    </form>
+  </div>
+
+  <script>
+    // Mise à jour des valeurs de sliders
+    const sliders = ["chambre", "cuisine", "salon", "toilette", "design"];
+    sliders.forEach(id => {
+      const slider = document.getElementById(id);
+      const label = document.getElementById(id + "Val");
+      slider.addEventListener("input", () => {
+        label.textContent = slider.value;
+      });
+    });
+
+    // Envoi des données au backend Flask
+    document.getElementById("predictForm").addEventListener("submit", async function(e) {
+      e.preventDefault();
+
+      const data = {
+        Commune: document.getElementById("commune").value,
+        Quartier: document.getElementById("quartier").value,
+        Chambre: parseInt(document.getElementById("chambre").value),
+        Cuisine: parseInt(document.getElementById("cuisine").value),
+        Salon: parseInt(document.getElementById("salon").value),
+        "Toilette int": parseInt(document.getElementById("toilette").value),
+        Design: parseInt(document.getElementById("design").value),
+      };
+
+      const response = await fetch("http://127.0.0.1:5000/predict", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+
+      const result = await response.json();
+
+      if (result.prix_estime) {
+        document.getElementById("resultat").innerHTML =
+          `💵 Prix estimé : <span>${result.prix_estime.toLocaleString()} USD</span>`;
+      } else {
+        document.getElementById("resultat").innerHTML =
+          `<span style="color:red;">Erreur : ${result.error}</span>`;
+      }
+    });
+  </script>
+</body>
+</html>

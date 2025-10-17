@@ -1,0 +1,484 @@
+{% extends "base.html" %}
+
+{% block title %}Contact{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/house.css') }}"> 
+
+    <!-- Page Header -->
+    <div class="page-header">
+        <div class="container">
+            <h1>Nos biens immobiliers</h1>
+            <p>Découvrez notre sélection de maisons et appartements</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Filters -->
+        <div class="filters">
+            <div class="filter-row">
+                <div class="filter-group">
+                    <label for="propertyType">Type de bien</label>
+                    <select id="propertyType">
+                        <option value="">Tous les types</option>
+                        <option value="house">Maison</option>
+                        <option value="apartment">Appartement</option>
+                        <option value="villa">Villa</option>
+                        <option value="loft">Loft</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <label for="transactionType">Transaction</label>
+                    <select id="transactionType">
+                        <option value="">Vente et location</option>
+                        <option value="sale">À vendre</option>
+                        <option value="rent">À louer</option>
+                    </select>
+                </div>
+                 
+                <div class="filter-group">
+                    <label for="priceRange">Budget max</label>
+                    <input type="range" id="priceRange" min="0" max="1000000" step="50000">
+                    <output for="priceRange" id="priceOutput">500 000 $</output>
+                </div>
+            </div>
+            
+            <div class="filter-row">
+                <div class="filter-group">
+                    <label for="location">Localisation</label>
+                    <input type="text" id="location" placeholder="Ville, code postal...">
+                </div>
+                
+                <div class="filter-group">
+                    <label for="rooms">Pièces min.</label>
+                    <select id="rooms">
+                        <option value="0">Toutes</option>
+                        <option value="1">1 pièce</option>
+                        <option value="2">2 pièces</option>
+                        <option value="3">3 pièces</option>
+                        <option value="4">4 pièces et plus</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <label for="surface">Surface min.</label>
+                    <select id="surface">
+                        <option value="0">Toutes</option>
+                        <option value="50">50 m²</option>
+                        <option value="75">75 m²</option>
+                        <option value="100">100 m²</option>
+                        <option value="150">150 m² et plus</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="filter-actions">
+                <button class="btn btn-outline">Réinitialiser</button>
+                <button class="btn btn-primary">Appliquer les filtres</button>
+            </div>
+        </div>
+
+        <!-- Properties Grid -->
+        <div class="properties-grid">
+            <!-- Property 1 -->
+                {% for house in houses %}
+            <div class="property-card">
+                <div class="property-image">
+                    <span class="property-badge badge-sale">{{ house.type }}</span>
+                    {% for img in house.images %}
+                    <img src="{{ url_for('static', filename='uploads/' ~ img.filename)}}" alt="Modern House">
+                    {% endfor %}
+                     
+                </div>
+                <div class="property-content">
+                    <div class="property-price">{{ house.prix }}$</div>
+                    <div class="property-address">
+                        <i class="fas fa-map-marker-alt"></i> {{ house.adresse }}
+                    </div>
+                    <h3 class="property-title">{{ house.titre }}</h3>
+                    <p class="property-description">{{ house.description [:60] }}{% if house.description|length > 100 %}...{% endif %}</p>
+                    
+                </div>
+                <div class="property-footer">
+                    <span class="property-date">Publié le {{ house.date_creation }}</span>
+                    <a href="" class="btn btn-primary btn-small view-details" data-id="{{house.id}}">Voir détails</a>
+                </div>
+                
+            </div>
+                {% endfor %}
+
+            <!-- Property 2
+            <div class="property-card">
+                <div class="property-image">
+                    <span class="property-badge badge-rent">À louer</span>
+                    <img src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Apartment">
+                </div>
+                <div class="property-content">
+                    <div class="property-price">1 200 €/mois</div>
+                    <div class="property-address">
+                        <i class="fas fa-map-marker-alt"></i> 45 Av. des Champs, Lyon
+                    </div>
+                    <h3 class="property-title">Appartement lumineux</h3>
+                    <p class="property-description">Bel appartement lumineux avec vue sur parc. Récent et entièrement rénové.</p>
+                    
+                </div>
+                <div class="property-footer">
+                    <span class="property-date">Publié le 10/06/2023</span>
+                    <button class="btn btn-primary btn-small view-details" data-id="2">Voir détails</button>
+                </div>
+            </div>
+            
+             Property 3 
+            <div class="property-card">
+                <div class="property-image">
+                    <span class="property-badge badge-sale">À vendre</span>
+                    <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Country House">
+                </div>
+                <div class="property-content">
+                    <div class="property-price">280 000 €</div>
+                    <div class="property-address">
+                        <i class="fas fa-map-marker-alt"></i> Hameau du Lac, Provence
+                    </div>
+                    <h3 class="property-title">Maison de campagne</h3>
+                    <p class="property-description">Charmante maison de campagne avec charme et character. Calme garantie.</p>
+                    
+                </div>
+                <div class="property-footer">
+                    <span class="property-date">Publié le 08/06/2023</span>
+                    <button class="btn btn-primary btn-small view-details" data-id="3">Voir détails</button>
+                </div>
+            </div>
+            
+             Property 4 
+            <div class="property-card">
+                <div class="property-image">
+                    <span class="property-badge badge-rent">À louer</span>
+                    <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Apartment">
+                </div>
+                <div class="property-content">
+                    <div class="property-price">850 €/mois</div>
+                    <div class="property-address">
+                        <i class="fas fa-map-marker-alt"></i> 78 Rue du Commerce, Lille
+                    </div>
+                    <h3 class="property-title">Studio meublé centre-ville</h3>
+                    <p class="property-description">Studio entièrement meublé au cœur de la ville, proche de tous transports.</p>
+                    
+                </div>
+                <div class="property-footer">
+                    <span class="property-date">Publié le 05/06/2023</span>
+                    <button class="btn btn-primary btn-small view-details" data-id="4">Voir détails</button>
+                </div>
+            </div>
+            
+             Property 5 
+            <div class="property-card">
+                <div class="property-image">
+                    <span class="property-badge badge-sale">À vendre</span>
+                    <img src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="House">
+                </div>
+                <div class="property-content">
+                    <div class="property-price">520 000 €</div>
+                    <div class="property-address">
+                        <i class="fas fa-map-marker-alt"></i> 22 Chemin des Bois, Bordeaux
+                    </div>
+                    <h3 class="property-title">Maison contemporaine</h3>
+                    <p class="property-description">Maison contemporaine avec grande terrasse et vue imprenable. Architecture moderne.</p>
+                    
+                </div>
+                <div class="property-footer">
+                    <span class="property-date">Publié le 03/06/2023</span>
+                    <button class="btn btn-primary btn-small view-details" data-id="5">Voir détails</button>
+                </div>
+            </div>
+            
+            Property 6 
+            <div class="property-card">
+                <div class="property-image">
+                    <span class="property-badge badge-rent">À louer</span>
+                    <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="House">
+                </div>
+                <div class="property-content">
+                    <div class="property-price">1 800 €/mois</div>
+                    <div class="property-address">
+                        <i class="fas fa-map-marker-alt"></i> 5 Impasse des Lilas, Marseille
+                    </div>
+                    <h3 class="property-title">Pavillon avec jardin</h3>
+                    <p class="property-description">Pavillon récent avec grand jardin clos. Idéal pour famille. Quartier résidentiel calme.</p>
+                    
+                </div>
+                <div class="property-footer">
+                    <span class="property-date">Publié le 01/06/2023</span>
+                    <button class="btn btn-primary btn-small view-details" data-id="6">Voir détails</button>
+                </div>
+            </div> -->
+        </div>
+
+        <!-- Pagination 
+        <div class="pagination">
+            <div class="pagination-item active">1</div>
+            <div class="pagination-item">2</div>
+            <div class="pagination-item">3</div>
+            <div class="pagination-item">4</div>
+            <div class="pagination-item">5</div>
+        </div>-->
+    </div>
+
+
+    <!-- Modal unique -->
+    <div class="modal" id="detailsModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="modalTitle">Titre du bien</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-gallery" id="modalGallery"></div>
+                
+                <div class="property-details">
+                    <div class="detail-item"><span class="detail-label">Prix</span> <span class="detail-value budget" id="modalPrice"></span>
+                    </div>
+                    <div class="detail-item"><span class="detail-label">Localisation</span> <span class="detail-value" id="modalAddress"></span>
+                    </div>
+                    <div class="detail-item"><span class="detail-label">Surface</span> <span class="detail-value" id="modalSurface"></span>
+                    </div>
+                    <div class="detail-item"><span class="detail-label">Pièces</span> <span class="detail-value" id="modalRooms"></span></div>
+                    <div class="detail-item"><span class="detail-label">Chambres</span> <span class="detail-value" id="modalBedrooms"></span></div>
+                    <div class="detail-item"><span class="detail-label">Salles de bain</span> <span class="detail-value" id="modalBathrooms"></span></div>
+                    <div class="detail-item"><span class="detail-label">Type</span> <span class="detail-value" id="modalType"></span></div>
+                    <div class="detail-item"><span class="detail-label">Transaction</span> <span class="detail-value" id="modalTransaction"></span></div>
+                </div>
+
+                <div class="modal-description" id="modalDescription"></div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-outline close-modal">Fermer</button>
+                <button class="btn btn-primary" id="modalContact">Contacter</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        
+        // Gestion des modals
+        const modal = document.getElementById('detailsModal');
+        const closeModalButtons = document.querySelectorAll('.close-modal');
+        const viewDetailsButtons = document.querySelectorAll('.view-details');
+        
+        // Ouvrir le modal
+        viewDetailsButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const propertyId = button.getAttribute('data-id');
+                const data = propertyData[propertyId];
+                
+                if (data) {
+                    document.getElementById('modalTitle').textContent = data.title;
+                    document.getElementById('modalPrice').textContent = data.price;
+                    document.getElementById('modalAddress').textContent = data.address;
+                    document.getElementById('modalSurface').textContent = data.surface;
+                    document.getElementById('modalRooms').textContent = data.rooms;
+                    document.getElementById('modalBedrooms').textContent = data.bedrooms;
+                    document.getElementById('modalBathrooms').textContent = data.bathrooms;
+                    document.getElementById('modalType').textContent = data.type;
+                    document.getElementById('modalTransaction').textContent = data.transaction;
+                    document.getElementById('modalDescription').textContent = data.description;
+                    
+                    // Mise à jour de la galerie d'images
+                    const modalGallery = document.getElementById('modalGallery');
+                    modalGallery.innerHTML = '';
+                    data.images.forEach(image => {
+                        const img = document.createElement('img');
+                        img.src = image;
+                        img.alt = data.title;
+                        modalGallery.appendChild(img);
+                    });
+                    
+                    // Mise à jour des équipements
+                    const modalFeatures = document.getElementById('modalFeatures');
+                    modalFeatures.innerHTML = '';
+                    data.features.forEach(feature => {
+                        const featureItem = document.createElement('div');
+                        featureItem.className = 'feature-item';
+                        featureItem.innerHTML = `<i class="fas fa-check"></i> <span>${feature}</span>`;
+                        modalFeatures.appendChild(featureItem);
+                    });
+                    
+                    // Configurer le bouton de contact
+                    document.getElementById('modalContact').onclick = () => {
+                        alert(`Contacter le propriétaire pour: ${data.title}\n(Cette fonctionnalité sera pleinement opérationnelle avec le backend)`);
+                    };
+                    
+                    modal.style.display = 'block';
+                    document.body.style.overflow = 'hidden';
+                }
+                
+            });
+        });
+        
+        // Fermer le modal
+        closeModalButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            });
+        });
+        
+        // Fermer le modal en cliquant à l'extérieur
+        window.addEventListener('click', (event) => {
+            if (event.target === modal) {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        });
+        
+        // Gestion du range slider pour le prix
+        const priceRange = document.getElementById('priceRange');
+        const priceOutput = document.getElementById('priceOutput');
+        
+        priceRange.addEventListener('input', function() {
+            const value = this.value;
+            priceOutput.value = `${value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ")} €`;
+        });
+        
+        // Simulation de filtres
+        document.querySelector('.filter-actions .btn-primary').addEventListener('click', function() {
+            alert('Filtres appliqués! (Cette fonctionnalité sera pleinement opérationnelle avec le backend)');
+        });
+        
+        document.querySelector('.filter-actions .btn-outline').addEventListener('click', function() {
+            document.getElementById('propertyType').value = '';
+            document.getElementById('transactionType').value = '';
+            document.getElementById('priceRange').value = 500000;
+            priceOutput.value = '500 000 €';
+            document.getElementById('location').value = '';
+            document.getElementById('rooms').value = '0';
+            document.getElementById('surface').value = '0';
+            
+            alert('Filtres réinitialisés!');
+        });
+    </script>
+    <script>
+        function loadHouseDetails(houseId) {
+            fetch(`/house/${houseId}/json`)
+                .then(response => response.json())
+                .then(data => {
+                    if (data.error) {
+                        document.getElementById("modalTitle").innerText = "Erreur";
+                        document.getElementById("modalDescription").innerText = data.error;
+                        return;
+                    }
+
+                    // Remplir la modale
+                    document.getElementById("modalTitle").innerText = data.titre;
+                    document.getElementById("modalDescription").innerText = data.description || "";
+                    document.getElementById("modalPrix").innerText = data.prix || "N/A";
+                    document.getElementById("modalAdresse").innerText = data.adresse || "N/A";
+
+                    // Images
+                    let imagesDiv = document.getElementById("modalImages");
+                    imagesDiv.innerHTML = "";
+                    if (data.images.length > 0) {
+                        data.images.forEach(img => {
+                            let imgTag = `<img src="/static/uploads/${img.filename}" width="200" class="rounded">`;
+                            imagesDiv.innerHTML += imgTag;
+                        });
+                    } else {
+                        imagesDiv.innerHTML = "<p>Aucune image disponible</p>";
+                    }
+                })
+                .catch(err => {
+                    console.error(err);
+                    document.getElementById("modalTitle").innerText = "Erreur";
+                    document.getElementById("modalDescription").innerText = "Impossible de charger les détails.";
+                });
+        }
+
+        // Attach event listeners to modal detail buttons
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('.view-details-modal').forEach(function(btn) {
+                btn.addEventListener('click', function() {
+                    const houseId = btn.getAttribute('data-id');
+                    loadHouseDetails(houseId);
+                });
+            });
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const modal = document.getElementById('detailsModal');
+            const closeModalBtn = document.querySelector('.close-modal');
+            const viewButtons = document.querySelectorAll('.view-details');
+
+            // Fonction pour charger les détails
+            function loadHouseDetails(houseId) {
+                fetch(`/house/${houseId}/json`)
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.error) {
+                            document.getElementById("modalTitle").innerText = "Erreur";
+                            document.getElementById("modalDescription").innerText = data.error;
+                            return;
+                        }
+
+                        // Injection des données dans le modal
+                        document.getElementById("modalTitle").innerText = data.titre;
+                        document.getElementById("modalPrice").innerText = data.prix + " $";
+                        document.getElementById("modalAddress").innerText = data.adresse;
+                        document.getElementById("modalSurface").innerText = data.surface + " m²";
+                        document.getElementById("modalRooms").innerText = data.piece + " pièces";
+                        document.getElementById("modalBedrooms").innerText = data.chambre + " chambres";
+                        document.getElementById("modalBathrooms").innerText = data.toilette + " sdb";
+                        document.getElementById("modalType").innerText = data.categorie;
+                        document.getElementById("modalTransaction").innerText = data.type;
+                        document.getElementById("modalDescription").innerText = data.description;
+
+                        // Images
+                        const gallery = document.getElementById("modalGallery");
+                        gallery.innerHTML = "";
+                        if (data.images && data.images.length > 0) {
+                            data.images.forEach(img => {
+                                const imageTag = document.createElement("img");
+                                imageTag.src = `/static/uploads/${img.filename}`;
+                                imageTag.alt = data.titre;
+                                imageTag.style = "width:100%;max-height:200px;object-fit:cover;margin-bottom:10px;";
+                                gallery.appendChild(imageTag);
+                            });
+                        } else {
+                            gallery.innerHTML = "<p>Aucune image disponible</p>";
+                        }
+
+                        modal.style.display = "block";
+                        document.body.style.overflow = "hidden";
+                    })
+                    .catch(err => {
+                        console.error(err);
+                        alert("Erreur lors du chargement des détails");
+                    });
+            }
+
+            // Ouvrir le modal au clic
+            viewButtons.forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const houseId = btn.getAttribute('data-id');
+                    loadHouseDetails(houseId);
+                });
+            });
+
+            // Fermer la modale
+            closeModalBtn.addEventListener('click', () => {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            });
+
+            // Fermer en cliquant à l’extérieur
+            window.addEventListener('click', (event) => {
+                if (event.target === modal) {
+                    modal.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }
+            });
+        });
+    </script>
+
+{% endblock %}

@@ -1,0 +1,418 @@
+{% extends "base.html" %}
+
+{% block title %}Contact{% endblock %}
+
+{% block content %}
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Trouvez la maison de vos rêves</h1>
+                <p>Des milliers d'annonces de location et vente de maisons. Trouvez votre bonheur ou publiez une annonce pour rechercher le bien idéal.</p>
+                
+                <div class="search-box">
+                    <div class="search-tabs">
+                        <div class="search-tab active">Acheter</div>
+                        <div class="search-tab">Louer</div>
+                        <div class="search-tab">Je cherche</div>
+                    </div>
+                    
+                    <div class="search-form">
+                        <div class="form-group">
+                            <label for="location">Lieu</label>
+                            <input type="text" id="location" placeholder="Paris, Lyon, Marseille...">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="type">Type de bien</label>
+                            <select id="type">
+                                <option value="">Maison</option>
+                                <option value="">Appartement</option>
+                                <option value="">Villa</option>
+                                <option value="">Loft</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="price">Budget max</label>
+                            <input type="text" id="price" placeholder="300 000 €">
+                        </div>
+                        
+                        <button class="search-btn">Rechercher <i class="fas fa-search"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Properties -->
+    <section class="container">
+        <h2 class="section-title">Biens le plus reçent (ajoter un soulignement)</h2>
+        
+        <!-- Properties Grid -->
+            <div class="properties-grid">
+                <!-- Property 1 -->
+                    {% for house in houses %}
+                <div class="property-card">
+                    <div class="property-image">
+                        <span class="property-badge badge-sale">{{ house.type }}</span>
+                        {% for img in house.images %}
+                        <img src="{{ url_for('static', filename='uploads/' ~ img.filename) }}" alt="Modern House">
+                        {% endfor %}
+                    </div>
+                    <div class="property-content">
+                        <div class="property-price">{{ house.prix }}</div>
+                        <div class="property-address">
+                            <i class="fas fa-map-marker-alt"></i> {{ house.adresse }}
+                        </div>
+                        <h3 class="property-title">{{ house.titre }}</h3>
+                        <p class="property-description">{{ house.description [:60] }}{% if house.description|length > 100 %}...{% endif %}</p>
+                        
+                    </div>
+                    <div class="property-footer">
+                        <span class="property-date">Publié le {{ house.date_creation }}</span>
+                        <a href="" class="btn btn-primary btn-small view-details" data-id="{{house.id}}">Voir détails</a>
+                    </div>
+                    
+                </div>
+                    {% endfor %}
+            </div>
+        </div>    
+            
+     
+        
+        <div style="text-align: center; margin-bottom: 4rem;">
+            <a href="{{ url_for('house') }}" class="btn btn-primary">Voir tous les biens</a>
+        </div>
+    </section>
+
+    <!-- How it works -->
+    <section class="how-it-works">
+        <div class="container">
+            <h2 class="section-title">Comment ça marche</h2>
+            
+            <div class="steps">
+                <div class="step">
+                    <div class="step-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3>Recherchez</h3>
+                    <p>Parcourez nos milliers d'annonces et trouvez le bien qui correspond à vos critères.</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-icon">
+                        <i class="fas fa-house-user"></i>
+                    </div>
+                    <h3>Visitez</h3>
+                    <p>Prenez rendez-vous pour visiter les propriétés qui vous intéressent.</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-icon">
+                        <i class="fas fa-key"></i>
+                    </div>
+                    <h3>Acquérez</h3>
+                    <p>Finalisez votre achat ou location et recevez les clés de votre nouveau chez-vous.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Searches -->
+    <section class="searches container">
+        <h2 class="section-title">Annonces reçentes</h2>
+        
+        <div class="searches-grid">
+            {% for annonce in annonces %}
+            <!-- Search 1 -->
+            <div class="search-card">
+                <div class="search-header">
+                    <h3 class="search-title">{{annonce.titre}}</h3>
+                    <div class="search-tags">
+                        <span class="search-tag tag-buy">{{annonce.type}}</span>
+                        <span class="search-tag">Maison</span>
+                    </div>
+                    <p class="search-description">{{annonce.description}}</p>
+                </div>
+                <div class="search-footer">
+                    <span class="search-date">Publiée le {{annonce.date_creation}}</span>
+                    <button class="btn btn-primary btn-small view-details" data-id="1">Voir détails</button>
+                </div>
+            </div>
+            {% endfor %}
+            
+        </div>
+        
+        <div style="text-align: center; margin-top: 2rem;">
+            <a href="{{ url_for('annonce') }}" class="btn btn-outline">Voir toutes les recherches</a>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section cta-primary">
+        <div class="container">
+            <h2>Vous cherchez un bien spécifique ?</h2>
+            <p>Publiez une annonce "Je cherche" et laissez les propriétaires vous contacter</p>
+            <a href="{{ url_for('addAnnonce') }}" class="btn btn-primary">Publier une annonce</a>
+        </div>
+    </section>
+
+    <!-- Modal unique -->
+    <div class="modal" id="detailsModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="modalTitle">Titre du bien</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-gallery" id="modalGallery"></div>
+                
+                <div class="property-details">
+                    <div class="detail-item"><span class="detail-label">Prix</span> <span class="detail-value budget" id="modalPrice"></span>
+                    </div>
+                    <div class="detail-item"><span class="detail-label">Localisation</span> <span class="detail-value" id="modalAddress"></span>
+                    </div>
+                    <div class="detail-item"><span class="detail-label">Surface</span> <span class="detail-value" id="modalSurface"></span>
+                    </div>
+                    <div class="detail-item"><span class="detail-label">Pièces</span> <span class="detail-value" id="modalRooms"></span></div>
+                    <div class="detail-item"><span class="detail-label">Chambres</span> <span class="detail-value" id="modalBedrooms"></span></div>
+                    <div class="detail-item"><span class="detail-label">Salles de bain</span> <span class="detail-value" id="modalBathrooms"></span></div>
+                    <div class="detail-item"><span class="detail-label">Type</span> <span class="detail-value" id="modalType"></span></div>
+                    <div class="detail-item"><span class="detail-label">Transaction</span> <span class="detail-value" id="modalTransaction"></span></div>
+                </div>
+
+                <div class="modal-description" id="modalDescription"></div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-outline close-modal">Fermer</button>
+                <button class="btn btn-primary" id="modalContact">Contacter</button>
+            </div>
+        </div>
+    </div>
+
+     <script>   
+    // Gestion des modals
+        const modal = document.getElementById('detailsModal');
+        const closeModalButtons = document.querySelectorAll('.close-modal');
+        const viewDetailsButtons = document.querySelectorAll('.view-details');
+        
+        // Ouvrir le modal
+        viewDetailsButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const propertyId = button.getAttribute('data-id');
+                const data = propertyData[propertyId];
+                
+                if (data) {
+                    document.getElementById('modalTitle').textContent = data.title;
+                    document.getElementById('modalPrice').textContent = data.price;
+                    document.getElementById('modalAddress').textContent = data.address;
+                    document.getElementById('modalSurface').textContent = data.surface;
+                    document.getElementById('modalRooms').textContent = data.rooms;
+                    document.getElementById('modalBedrooms').textContent = data.bedrooms;
+                    document.getElementById('modalBathrooms').textContent = data.bathrooms;
+                    document.getElementById('modalType').textContent = data.type;
+                    document.getElementById('modalTransaction').textContent = data.transaction;
+                    document.getElementById('modalDescription').textContent = data.description;
+                    
+                    // Mise à jour de la galerie d'images
+                    const modalGallery = document.getElementById('modalGallery');
+                    modalGallery.innerHTML = '';
+                    data.images.forEach(image => {
+                        const img = document.createElement('img');
+                        img.src = image;
+                        img.alt = data.title;
+                        modalGallery.appendChild(img);
+                    });
+                    
+                    // Mise à jour des équipements
+                    const modalFeatures = document.getElementById('modalFeatures');
+                    modalFeatures.innerHTML = '';
+                    data.features.forEach(feature => {
+                        const featureItem = document.createElement('div');
+                        featureItem.className = 'feature-item';
+                        featureItem.innerHTML = `<i class="fas fa-check"></i> <span>${feature}</span>`;
+                        modalFeatures.appendChild(featureItem);
+                    });
+                    
+                    // Configurer le bouton de contact
+                    document.getElementById('modalContact').onclick = () => {
+                        alert(`Contacter le propriétaire pour: ${data.title}\n(Cette fonctionnalité sera pleinement opérationnelle avec le backend)`);
+                    };
+                    
+                    modal.style.display = 'block';
+                    document.body.style.overflow = 'hidden';
+                }
+                
+            });
+        });
+        
+        // Fermer le modal
+        closeModalButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            });
+        });
+        
+        // Fermer le modal en cliquant à l'extérieur
+        window.addEventListener('click', (event) => {
+            if (event.target === modal) {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        });
+        
+        // Gestion du range slider pour le prix
+        const priceRange = document.getElementById('priceRange');
+        const priceOutput = document.getElementById('priceOutput');
+        
+        priceRange.addEventListener('input', function() {
+            const value = this.value;
+            priceOutput.value = `${value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ")} €`;
+        });
+        
+        // Simulation de filtres
+        document.querySelector('.filter-actions .btn-primary').addEventListener('click', function() {
+            alert('Filtres appliqués! (Cette fonctionnalité sera pleinement opérationnelle avec le backend)');
+        });
+        
+        document.querySelector('.filter-actions .btn-outline').addEventListener('click', function() {
+            document.getElementById('propertyType').value = '';
+            document.getElementById('transactionType').value = '';
+            document.getElementById('priceRange').value = 500000;
+            priceOutput.value = '500 000 €';
+            document.getElementById('location').value = '';
+            document.getElementById('rooms').value = '0';
+            document.getElementById('surface').value = '0';
+            
+            alert('Filtres réinitialisés!');
+        });
+    </script>
+    <script>
+        function loadHouseDetails(houseId) {
+            fetch(`/house/${houseId}/json`)
+                .then(response => response.json())
+                .then(data => {
+                    if (data.error) {
+                        document.getElementById("modalTitle").innerText = "Erreur";
+                        document.getElementById("modalDescription").innerText = data.error;
+                        return;
+                    }
+
+                    // Remplir la modale
+                    document.getElementById("modalTitle").innerText = data.titre;
+                    document.getElementById("modalDescription").innerText = data.description || "";
+                    document.getElementById("modalPrix").innerText = data.prix || "N/A";
+                    document.getElementById("modalAdresse").innerText = data.adresse || "N/A";
+
+                    // Images
+                    let imagesDiv = document.getElementById("modalImages");
+                    imagesDiv.innerHTML = "";
+                    if (data.images.length > 0) {
+                        data.images.forEach(img => {
+                            let imgTag = `<img src="/static/uploads/${img.filename}" width="200" class="rounded">`;
+                            imagesDiv.innerHTML += imgTag;
+                        });
+                    } else {
+                        imagesDiv.innerHTML = "<p>Aucune image disponible</p>";
+                    }
+                })
+                .catch(err => {
+                    console.error(err);
+                    document.getElementById("modalTitle").innerText = "Erreur";
+                    document.getElementById("modalDescription").innerText = "Impossible de charger les détails.";
+                });
+        }
+
+        // Attach event listeners to modal detail buttons
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('.view-details-modal').forEach(function(btn) {
+                btn.addEventListener('click', function() {
+                    const houseId = btn.getAttribute('data-id');
+                    loadHouseDetails(houseId);
+                });
+            });
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const modal = document.getElementById('detailsModal');
+            const closeModalBtn = document.querySelector('.close-modal');
+            const viewButtons = document.querySelectorAll('.view-details');
+
+            // Fonction pour charger les détails
+            function loadHouseDetails(houseId) {
+                fetch(`/house/${houseId}/json`)
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.error) {
+                            document.getElementById("modalTitle").innerText = "Erreur";
+                            document.getElementById("modalDescription").innerText = data.error;
+                            return;
+                        }
+
+                        // Injection des données dans le modal
+                        document.getElementById("modalTitle").innerText = data.titre;
+                        document.getElementById("modalPrice").innerText = data.prix + " $";
+                        document.getElementById("modalAddress").innerText = data.adresse;
+                        document.getElementById("modalSurface").innerText = data.surface + " m²";
+                        document.getElementById("modalRooms").innerText = data.piece + " pièces";
+                        document.getElementById("modalBedrooms").innerText = data.chambre + " chambres";
+                        document.getElementById("modalBathrooms").innerText = data.toilette + " sdb";
+                        document.getElementById("modalType").innerText = data.categorie;
+                        document.getElementById("modalTransaction").innerText = data.type;
+                        document.getElementById("modalDescription").innerText = data.description;
+
+                        // Images
+                        const gallery = document.getElementById("modalGallery");
+                        gallery.innerHTML = "";
+                        if (data.images && data.images.length > 0) {
+                            data.images.forEach(img => {
+                                const imageTag = document.createElement("img");
+                                imageTag.src = `/static/uploads/${img.filename}`;
+                                imageTag.alt = data.titre;
+                                imageTag.style = "width:100%;max-height:200px;object-fit:cover;margin-bottom:10px;";
+                                gallery.appendChild(imageTag);
+                            });
+                        } else {
+                            gallery.innerHTML = "<p>Aucune image disponible</p>";
+                        }
+
+                        modal.style.display = "block";
+                        document.body.style.overflow = "hidden";
+                    })
+                    .catch(err => {
+                        console.error(err);
+                        alert("Erreur lors du chargement des détails");
+                    });
+            }
+
+            // Ouvrir le modal au clic
+            viewButtons.forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const houseId = btn.getAttribute('data-id');
+                    loadHouseDetails(houseId);
+                });
+            });
+
+            // Fermer la modale
+            closeModalBtn.addEventListener('click', () => {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            });
+
+            // Fermer en cliquant à l’extérieur
+            window.addEventListener('click', (event) => {
+                if (event.target === modal) {
+                    modal.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }
+            });
+        });
+    </script> 
+
+{% endblock %}

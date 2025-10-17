@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recherche de bien - ImmoApp</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/addannonce.css') }}"> 
+
+</head>
+<body>
+    <header>
+        <div class="containers">
+            <nav class="navbar">
+                <a href="{{ url_for('home') }}" class="logo">
+                    <i class="fas fa-home"></i>
+                    ImmoApp
+                </a>
+            </nav>
+        </div>
+    </header>
+        <div class="header">
+            <h1><i class="fas fa-search"></i> Recherche de bien immobilier</h1>
+            <p>Décrivez le bien que vous recherchez et nous vous aiderons à le trouver</p>
+        </div>
+    <div class="container">      
+        <div class="form-container">
+            <form action="{{ url_for('addAnnonce') }}" method="POST" >
+                <!-- Titre et description -->
+                <div class="form-section">
+                    <h3 class="form-section-title">
+                        <i class="fas fa-pencil-alt"></i>
+                        Description de votre recherche
+                    </h3>
+                    
+                    <div class="form-group">
+                        <label for="searchTitle">Titre de votre recherche <i style="color : red;">*</i></label>
+                        <input type="text" name="titre" placeholder="Ex: Recherche maison familiale avec jardin" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="searchDescription">Description détaillée <i style="color : red;">*</i></label>
+                        <textarea name="description" placeholder="Décrivez le bien que vous recherchez, vos critères spécifiques, etc." required></textarea>
+                    </div>
+                </div>
+                
+                <!-- Type de bien et budget -->
+                <div class="form-section">
+                    <h3 class="form-section-title">
+                        <i class="fas fa-home"></i>
+                        Type de bien et budget
+                    </h3>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="propertyType">Type de bien <i style="color : red;">*</i></label>
+                            <select name="categorie" required>
+                                <option value="" desabled>Sélectionnez un type</option>
+                                <option value="Maison">Maison</option>
+                                <option value="Apartement">Appartement</option>
+                                <option value="Villa">Villa</option>
+                                <option value="Studio">Studio</option>
+                                <option value="Terrain">Terrain</option>
+                                <option value="Tout">Tout</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="transactionType">Type de transaction <i style="color : red;">*</i></label>
+                            <select name="type" required>
+                                <option value="Achat">Achat</option>
+                                <option value="Location">Location</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="minBudget">Budget</label>
+                            <input type="number" name="budget" placeholder="Ex: 2000">
+                        </div>
+                        
+                    </div>
+                </div>
+                
+                <!-- Localisation -->
+                <div class="form-section">
+                    <h3 class="form-section-title">
+                        <i class="fas fa-map-marker-alt"></i>
+                        Localisation souhaitée
+                    </h3>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="city">Commune <i style="color : red;">*</i></label>
+                            <input type="text" name="commune" placeholder="Ex: Lemba" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="postalCode">Quartier</label>
+                            <input type="text" name="quartier" placeholder="Ex: Echangeur">
+                        </div>
+                    </div>
+                    
+                    
+                </div>
+                
+                <!-- Caractéristiques -->
+                <div class="form-section">
+                    <h3 class="form-section-title">
+                        <i class="fas fa-list"></i>
+                        Caractéristiques souhaitées
+                    </h3>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="minSurface">Surface minimum (m²)</label>
+                            <input type="number" name="surface" placeholder="Ex: 80">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="minRooms">Nombre de pièces minimum</label>
+                            <input type="number" name="piece" placeholder="Ex: 3">
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="minBedrooms">Nombre de chambres minimum</label>
+                            <input type="number" name="chambre" placeholder="Ex: 2">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="minBathrooms">Nombre de salles de bain minimum</label>
+                            <input type="number" name="sldb" placeholder="Ex: 1">
+                        </div>
+                    </div>
+                    
+                    <div class="info-box">
+                        <p><i class="fas fa-info-circle"></i> Ces critères sont indicatifs. Laissez-les vides si vous n'avez pas d'exigence particulière.</p>
+                    </div>
+                </div>
+                
+                <!-- Contact -->
+                <div class="form-section">
+                    <h3 class="form-section-title">
+                        <i class="fas fa-user"></i>
+                        Vos coordonnées
+                    </h3>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="contactName">Nom <i style="color : red;">*</i></label>
+                            <input type="text" name="contactNom" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="contactEmail">Email <i style="color : red;">*</i></label>
+                            <input type="email" name="contactEmail" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="contactPhone">Téléphone <i style="color : red;">*</i></label>
+                        <input type="tel" name="contactPhone" required>
+                    </div>
+                    
+                </div>
+                
+                <!-- Actions -->
+                <div class="form-actions">
+                    <button type="button" class="btn btn-secondary">Annuler</button>
+                    <button type="submit" class="btn btn-primary">Publier ma recherche</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Gestion de la soumission du formulaire
+        document.getElementById('searchForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Validation simple
+            const title = document.getElementById('searchTitle').value;
+            const description = document.getElementById('searchDescription').value;
+            const maxBudget = document.getElementById('maxBudget').value;
+            const city = document.getElementById('city').value;
+            const name = document.getElementById('contactName').value;
+            const email = document.getElementById('contactEmail').value;
+            const phone = document.getElementById('contactPhone').value;
+            
+            if (!title || !description || !maxBudget || !city || !name || !email || !phone) {
+                alert('Veuillez remplir tous les champs obligatoires');
+                return;
+            }
+            
+            // Simulation d'envoi réussi
+            alert('Votre recherche a été publiée avec succès! Les propriétaires correspondant à vos critères pourront vous contacter.');
+            this.reset();
+        });
+        
+        // Gestion du bouton annuler
+        document.querySelector('.btn-secondary').addEventListener('click', function() {
+            if (confirm('Annuler la publication de votre recherche ?')) {
+                document.getElementById('searchForm').reset();
+            }
+        });
+    </script>

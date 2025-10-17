@@ -1,0 +1,49 @@
+<!-- regklepour les mot de passe -->
+<div class="password-requirements">
+   <div class="requirement invalid" id="lengthReq">
+      <i class="fas fa-circle"></i>
+      <span>Au moins 8 caractères</span>
+   </div>
+   <div class="requirement invalid" id="uppercaseReq">
+      <i class="fas fa-circle"></i>
+      <span>Au moins une majuscule</span>
+   </div>
+   <div class="requirement invalid" id="numberReq">
+      <i class="fas fa-circle"></i>
+      <span>Au moins un chiffre</span>
+   </div>
+   <div class="requirement invalid" id="specialReq">
+      <i class="fas fa-circle"></i>
+      <span>Au moins un caractère spécial</span>
+   </div>
+</div>
+
+
+<!-- stle pour faire la barre en bas des onglets -->
+.nav-item {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 0;
+            position: relative;
+            transition: var(--transition);
+        }
+
+        .nav-item:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--yellow);
+            transition: var(--transition);
+        }
+
+        .nav-item:hover:after {
+            width: 100%;
+        }
+
+        .nav-item:hover {
+            color: var(--yellow);
+        }

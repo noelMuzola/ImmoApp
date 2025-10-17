@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publier une annonce - ImmoLuxe</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/addhouse.css') }}"> 
+    
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <a href="{{ url_for('home') }}" class="logo">
+                    <i class="fas fa-home"></i>
+                    ImmoApp
+                </a>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Publication Form -->
+    <section class="publication-container">
+        <div class="container">
+            <div class="publication-header">
+                <h1>Publier un bien</h1>
+                <p>Remplissez le formulaire ci-dessous pour publier votre annonce. Tous les champs marqués d'un * sont obligatoires.</p>
+            </div>
+            
+            <div class="form-tabs">
+                <div class="form-tab active" data-tab="sell">Vendre un bien</div>
+                <div class="form-tab" data-tab="rent">Louer un bien</div>
+                <div class="form-tab" data-tab="search">Rechercher un bien</div>
+            </div>
+            
+            <form class="publication-form" action="{{ url_for('addHouse') }}" method="POST" enctype="multipart/form-data">
+                
+                <!-- Description -->
+                <div class="form-section">
+                    <h3 class="form-section-title">
+                        <i class="fas fa-align-left"></i>
+                        Description
+                    </h3>
+                    
+                    <div class="form-group">
+                        <label for="title">Titre de l'annonce <i style="color : red;">*</i></label>
+                        <input type="text" name="titre" placeholder="Ex: Magnifique appartement avec vue sur mer" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="description">Description <i style="color : red;">*</i></label>
+                        <textarea name="description" placeholder="Décrivez votre bien en détail..." required></textarea>
+                    </div>
+                </div>
+
+                <!-- Type d'annonce -->
+                <div class="form-section">
+                    <h3 class="form-section-title">
+                        <i class="fas fa-home"></i>
+                        Type de bien
+                    </h3>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="propertyType">Type de bien <i style="color : red;">*</i></label>
+                            <select name="categorie" required>
+                                <option value="" desabled>Sélectionnez un type</option>
+                                <option value="Maison">Maison</option>
+                                <option value="Apartement">Appartement</option>
+                                <option value="Villa">Villa</option>
+                                <option value="Studio">Studio</option>
+                                <option value="Terrain">Terrain</option>
+                                <option value="Tout">Tout</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="transactionType">Type de transaction <i style="color : red;">*</i></label>
+                            <select name="type" required>
+                                <option value="Achat">Achat</option>
+                                <option value="Location">Location</option>
+                            </select>
+                        </div>
+                    </div>    
+                </div>
+                
+                <!-- Localisation -->
+                <div class="form-section">
+                    <h3 class="form-section-title">
+                        <i class="fas fa-map-marker-alt"></i>
+                        Localisation
+                    </h3>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="address">Commune <i style="color : red;">*</i></label>
+                            <input type="text" name="commune" placeholder="Ex: Lemba" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="address">Quartier <i style="color : red;">*</i></label>
+                            <input type="text" name="quartier" placeholder="Ex: Echangeur" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="city">Adresse complete <i style="color : red;">*</i></label>
+                            <input type="text" name="adresse" placeholder="Ex: 123 Av Lubefu" required>
+                        </div>
+                    </div>    
+                </div>
+                
+                <!-- Caractéristiques -->
+                <div class="form-section">
+                    <h3 class="form-section-title">
+                        <i class="fas fa-ruler-combined"></i>
+                        Caractéristiques
+                    </h3>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="surface">Prix <i style="color : red;">*</i></label>
+                            <input type="number" name="prix" min="0" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="surface">Garantie </label>
+                            <input type="number" name="garantie" min="0" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="rooms">Surface (m²) <i style="color : red;">*</i></label>
+                            <input type="number" name="surface" min="0" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="price">Nombre de pièces <i style="color : red;">*</i></label>
+                            <input type="number" name="piece" min="0" required>
+                        </div>
+                    </div>    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="surface"> chambre </label>
+                            <input type="number" name="chambre" min="0">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="rooms"> Toilette interieur </label>
+                            <input type="number" name="sldb" min="0">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="price">Salon </label>
+                            <input type="number" name="salon" min="0">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="price">Cuisine </label>
+                            <input type="number" name="cuisine" min="0">
+                        </div>
+                    </div>    
+                </div>
+                                                
+                <!-- Photos -->
+                <div class="form-section">
+                    <h3 class="form-section-title">
+                        <i class="fas fa-camera"></i>
+                        Photo de votre bien
+                    </h3>
+                    
+                    <div class="image-upload">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                        <p>Cliquez pour ajouter une photo</p>
+                        <div class="upload-btn" >Parcourir les fichiers</div>
+                        <input type="file" name="image" multiple required>
+                    </div> 
+                    <!-- Upload d'image -->
+                    
+                </div>
+                
+                <!-- Contact -->
+                <div class="form-section">
+                    <h3 class="form-section-title">
+                        <i class="fas fa-user"></i>
+                        Contact
+                    </h3>
+                    <div class="form-row">    
+                        <div class="form-group">
+                            <label for="contactName">Nom <i style="color : red;">*</i></label>
+                            <input type="text" name="contactNom" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="contactPhone">Téléphone <i style="color : red;">*</i></label>
+                            <input type="tel" name="contactPhone" required>
+                        </div>
+                    </div>    
+                </div>
+                
+                <!-- Actions -->
+                <div class="form-actions">
+                    <button type="button" class="btn btn-secondary">Annuler</button>
+                    <button type="submit" class="btn btn-success">Publier l'annonce</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <script>
+        // Gestion des onglets
+        document.querySelectorAll('.form-tab').forEach(tab => {
+            tab.addEventListener('click', () => {   
+                document.querySelector('.form-tab.active').classList.remove('active');
+                tab.classList.add('active');
+            });
+        });
+        
+        // Simulation de l'upload d'image
+        const imageUpload = document.getElementById('imageUpload');
+        const fileInput = document.getElementById('fileInput');
+        
+        imageUpload.addEventListener('click', () => {
+            fileInput.click();
+        });
+        
+        // Gestion de la soumission du formulaire
+        document.getElementById('publicationForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Votre annonce a été publiée avec succès! (Cette fonctionnalité sera pleinement opérationnelle avec le backend)');
+        });
+    </script>
+</body>
+</html>

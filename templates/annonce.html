@@ -1,0 +1,313 @@
+{% extends "base.html" %}
+
+{% block title %}Contact{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/annonce.css') }}"> 
+    <!-- Page Header -->
+    <div class="page-header">
+        <div class="container">
+            <h1>Recherches de biens</h1>
+            <p>Découvrez les recherches de biens publiées par nos utilisateurs</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Filters -->
+        <div class="filters">
+            <div class="filter-row">
+                <div class="filter-group">
+                    <label for="propertyType">Type de bien</label>
+                    <select id="propertyType">
+                        <option value="">Tous les types</option>
+                        <option value="house">Maison</option>
+                        <option value="apartment">Appartement</option>
+                        <option value="villa">Villa</option>
+                        <option value="loft">Loft</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <label for="transactionType">Type de transaction</label>
+                    <select id="transactionType">
+                        <option value="">Achat et location</option>
+                        <option value="buy">Achat</option>
+                        <option value="rent">Location</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <label for="maxBudget">Budget maximum</label>
+                    <input type="number" id="maxBudget" placeholder="Budget max (€)">
+                </div>
+            </div>
+            
+            <div class="filter-row">
+                <div class="filter-group">
+                    <label for="location">Localisation</label>
+                    <input type="text" id="location" placeholder="Ville, code postal...">
+                </div>
+                
+                <div class="filter-group">
+                    <label for="rooms">Pièces min.</label>
+                    <select id="rooms">
+                        <option value="0">Toutes</option>
+                        <option value="1">1 pièce</option>
+                        <option value="2">2 pièces</option>
+                        <option value="3">3 pièces</option>
+                        <option value="4">4 pièces et plus</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <label for="surface">Surface min.</label>
+                    <select id="surface">
+                        <option value="0">Toutes</option>
+                        <option value="50">50 m²</option>
+                        <option value="75">75 m²</option>
+                        <option value="100">100 m²</option>
+                        <option value="150">150 m² et plus</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="filter-actions">
+                <button class="btn btn-outline">Réinitialiser</button>
+                <button class="btn btn-primary">Appliquer les filtres</button>
+            </div>
+        </div>
+
+        <!-- Searches Grid -->
+        <div class="searches-grid">
+            {% for annonce in annonces %}
+            <!-- Search 1 -->
+            <div class="search-card">
+                <div class="search-header">
+                    <h3 class="search-title">{{annonce.titre}}</h3>
+                    <div class="search-tags">
+                        <span class="search-tag tag-buy">{{annonce.type}}</span>
+                        <span class="search-tag">Maison</span>
+                    </div>
+                    <p class="search-description">{{annonce.description}}</p>
+                </div>
+                <div class="search-footer">
+                    <span class="search-date">Publiée il y a {{date_pub}}</span>
+                    <button class="btn btn-primary btn-small view-details" data-id="1">Voir détails</button>
+                </div>
+            </div>
+            {% endfor %}
+            
+        </div>
+
+        <!-- Pagination -->
+        <div class="pagination">
+            <div class="pagination-item active">1</div>
+            <div class="pagination-item">2</div>
+            <div class="pagination-item">3</div>
+            <div class="pagination-item">4</div>
+            <div class="pagination-item">5</div>
+        </div>
+    </div>
+
+
+    <!-- Modal -->
+    <div class="modal" id="detailsModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="modalTitle">Titre de la recherche</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="search-tags" id="modalTags"></div>
+                <p class="search-description" id="modalDescription">Description de la recherche</p>
+                
+                <div class="search-details">
+                    <div class="detail-item">
+                        <span class="detail-label">Budget</span>
+                        <span class="detail-value budget" id="modalBudget">350 000 € max</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Localisation</span>
+                        <span class="detail-value" id="modalLocation">Lyon et alentours</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Surface</span>
+                        <span class="detail-value" id="modalSurface">120 m² min</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Pièces</span>
+                        <span class="detail-value" id="modalRooms">5 pièces min</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Chambres</span>
+                        <span class="detail-value" id="modalBedrooms">4 chambres min</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Date de publication</span>
+                        <span class="detail-value" id="modalDate">12/06/2023</span>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-outline close-modal">Fermer</button>
+                <button class="btn btn-primary" id="modalContact">Proposer un bien</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Données des recherches (simulées)
+        const searchData = {
+            1: {
+                title: "Maison familiale avec jardin",
+                type: "buy",
+                propertyType: "house",
+                description: "Je recherche une maison spacieuse avec jardin pour ma famille. Proche des écoles et commodités. Bien exposée et si possible avec garage.",
+                budget: "350 000 € max",
+                location: "Lyon et alentours",
+                surface: "120 m² min",
+                rooms: "5 pièces min",
+                bedrooms: "4 chambres min",
+                date: "12/06/2023",
+                extras: "Jardin, Garage"
+            },
+            2: {
+                title: "Appartement centre-ville",
+                type: "rent",
+                propertyType: "apartment",
+                description: "Je cherche un appartement lumineux en centre-ville, proche des transports. Meublé de préférence, avec une belle vue et calme.",
+                budget: "900 €/mois max",
+                location: "Paris 5ème",
+                surface: "45 m² min",
+                rooms: "2 pièces min",
+                bedrooms: "1 chambre min",
+                date: "10/06/2023",
+                extras: "Meublé, Centre-ville"
+            },
+            3: {
+                title: "Villa contemporaine avec piscine",
+                type: "buy",
+                propertyType: "villa",
+                description: "Recherche villa contemporaine avec piscine, dans un quartier calme. Architecture moderne, grande terrasse et si possible vue dégagée.",
+                budget: "650 000 € max",
+                location: "Côte d'Azur",
+                surface: "200 m² min",
+                rooms: "5 pièces min",
+                bedrooms: "4 chambres min",
+                date: "08/06/2023",
+                extras: "Piscine, Terrasse"
+            },
+            4: {
+                title: "Studio étudiant proche université",
+                type: "rent",
+                propertyType: "apartment",
+                description: "Étudiant cherche studio meublé proche du campus universitaire. Bonne isolation, calme et de préférence avec accès internet inclus.",
+                budget: "500 €/mois max",
+                location: "Toulouse, proche université",
+                surface: "25 m² min",
+                rooms: "1 pièce",
+                bedrooms: "1 chambre",
+                date: "05/06/2023",
+                extras: "Meublé, Internet inclus"
+            },
+            5: {
+                title: "Loft artistique en rez-de-chaussée",
+                type: "buy",
+                propertyType: "loft",
+                description: "Artiste cherche loft avec grande pièce de vie, hauteur sous plafond importante. Rez-de-chaussée ou avec accès direct à l'extérieur.",
+                budget: "280 000 € max",
+                location: "Bordeaux",
+                surface: "80 m² min",
+                rooms: "2 pièces min",
+                bedrooms: "1 chambre min",
+                date: "03/06/2023",
+                extras: "Rez-de-chaussée, Hauteur sous plafond 3m min"
+            },
+            6: {
+                title: "Maison de village rénovée",
+                type: "rent",
+                propertyType: "house",
+                description: "Recherche maison de village rénovée, caractère ancien avec modernité. Proche des commodités mais dans une rue calme. Jardin apprécié.",
+                budget: "1 100 €/mois max",
+                location: "Villages autour de Montpellier",
+                surface: "90 m² min",
+                rooms: "4 pièces min",
+                bedrooms: "3 chambres min",
+                date: "01/06/2023",
+                extras: "Jardin, Rénovée"
+            }
+        };
+
+        // Gestion des modals
+        const modal = document.getElementById('detailsModal');
+        const closeModalButtons = document.querySelectorAll('.close-modal');
+        const viewDetailsButtons = document.querySelectorAll('.view-details');
+        
+        // Ouvrir le modal
+        viewDetailsButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const searchId = button.getAttribute('data-id');
+                const data = searchData[searchId];
+                
+                if (data) {
+                    document.getElementById('modalTitle').textContent = data.title;
+                    document.getElementById('modalDescription').textContent = data.description;
+                    document.getElementById('modalBudget').textContent = data.budget;
+                    document.getElementById('modalLocation').textContent = data.location;
+                    document.getElementById('modalSurface').textContent = data.surface;
+                    document.getElementById('modalRooms').textContent = data.rooms;
+                    document.getElementById('modalBedrooms').textContent = data.bedrooms;
+                    document.getElementById('modalDate').textContent = data.date;
+                    
+                    // Mise à jour des tags
+                    const modalTags = document.getElementById('modalTags');
+                    modalTags.innerHTML = `
+                        <span class="search-tag ${data.type === 'buy' ? 'tag-buy' : 'tag-rent'}">${data.type === 'buy' ? 'Achat' : 'Location'}</span>
+                        <span class="search-tag">${data.propertyType === 'house' ? 'Maison' : data.propertyType === 'apartment' ? 'Appartement' : data.propertyType === 'villa' ? 'Villa' : 'Loft'}</span>
+                    `;
+                    
+                    // Configurer le bouton de contact
+                    document.getElementById('modalContact').onclick = () => {
+                        alert(`Proposer un bien pour: ${data.title}\n(Cette fonctionnalité sera pleinement opérationnelle avec le backend)`);
+                    };
+                    
+                    modal.style.display = 'block';
+                    document.body.style.overflow = 'hidden';
+                }
+            });
+        });
+        
+        // Fermer le modal
+        closeModalButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            });
+        });
+        
+        // Fermer le modal en cliquant à l'extérieur
+        window.addEventListener('click', (event) => {
+            if (event.target === modal) {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        });
+        
+        // Simulation de filtres
+        document.querySelector('.filter-actions .btn-primary').addEventListener('click', function() {
+            alert('Filtres appliqués! (Cette fonctionnalité sera pleinement opérationnelle avec le backend)');
+        });
+        
+        document.querySelector('.filter-actions .btn-outline').addEventListener('click', function() {
+            document.getElementById('propertyType').value = '';
+            document.getElementById('transactionType').value = '';
+            document.getElementById('maxBudget').value = '';
+            document.getElementById('location').value = '';
+            document.getElementById('rooms').value = '0';
+            document.getElementById('surface').value = '0';
+            
+            alert('Filtres réinitialisés!');
+        });
+    </script>
+
+{% endblock %}

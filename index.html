@@ -1,0 +1,396 @@
+{% if go == 1 %}    
+
+    {% extends "base2.html" %}
+
+    {% block titles %}Contact{% endblock %}
+
+    {% block contents %}
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}"> 
+
+<!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <h1 class="display-5 fw-bold mb-3">Trouvez votre maison idéale</h1>
+            <p class="lead mb-4">Des milliers de propriétés vous attendent. Location, vente, achat, tout est là.</p>
+            
+            <div class="search-box">
+                <form class="d-flex mx-auto search-bar" method="get" action="{{ url_for('search') }}" role="search">    
+                    <div class="input-group">
+                        <input id="recher" name="q" type="text" required class="form-control" placeholder="Rechercher par ville, quartier, type de bien...">
+                        <button   on class="btn btn-primary" type="submit">
+                            <i class="fas fa-search me-2"></i> Rechercher
+                        </button>
+                    </div>
+                </form>    
+                <!-- <div class="row mt-3">
+                    <div class="col-md-4 mb-2">
+                        <select class="form-select form-select-sm">
+                            <option selected>Type de transaction</option>
+                            <option>Location</option>
+                            <option>Vente</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4 mb-2">
+                        <select class="form-select form-select-sm">
+                            <option selected>Type de propriété</option>
+                            <option>Maison</option>
+                            <option>Appartement</option>
+                            <option>Studio</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4 mb-2">
+                        <select class="form-select form-select-sm">
+                            <option selected>Budget max</option>
+                            <option>500 $</option>
+                            <option>1000 $</option>
+                            <option>1500 $</option>
+                        </select>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="container">       
+           <!-- Featured Properties -->
+        <div class="row mb-5">
+            <div class="col-md-12">
+                <div class="d-flex justify-content-between align-items-center">
+                    <h2 class="section-title">Publications récentes</h2>
+                </div>
+            </div>
+         
+        <!-- Properties Grid -->
+            <div class="properties-grid">
+                <!-- Property 1 -->
+                    {% for house in houses %}
+                <div class="property-card">
+                    <div class="property-image">
+                        <span class="property-badge badge-sale">{{ house.type }}</span>
+                        {% for img in house.images %}
+                        <img src="{{ url_for('static', filename='uploads/' ~ img.filename) }}" alt="Modern House">
+                        {% endfor %}
+                    </div>
+                    <div class="property-content">
+                        <div class="property-price">{{ house.prix }}</div>
+                        <div class="property-address">
+                            <i class="fas fa-map-marker-alt"></i> {{ house.adresse }}
+                        </div>
+                        <h3 class="property-title">{{ house.titre }}</h3>
+                        <p class="property-description">{{ house.description [:60] }}{% if house.description|length > 100 %}...{% endif %}</p>
+                        
+                    </div>
+                    <div class="property-footer">
+                        <span class="property-date">Publié le {{ house.date_creation }}</span>
+                        <a href="{{ url_for('detail', house_id=house.id) }}" class="btn btn-primary btn-small view-details" data-id="{{house.id}}">Voir détails</a>
+                    </div>
+                    
+                </div>
+                    {% endfor %}
+            </div>
+        </div>    
+
+        <a href="{{ url_for('annonce') }}" class="btn btn-outline-primary">Voir tout</a>
+        
+        <!-- Stats Section -->
+        <div class="stats-section rounded-3">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3 col-6">
+                        <div class="stat-item">
+                            <div class="stat-number">{{ p }}+</div>
+                            <div>Propriétés</div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-6">
+                        <div class="stat-item">
+                            <div class="stat-number">{{ u }}+</div>
+                            <div>Utilisateurs</div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-6">
+                        <div class="stat-item">
+                            <div class="stat-number">{{ c }}</div>
+                            <div>Commune</div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-6">
+                        <div class="stat-item">
+                            <div class="stat-number">{{ q }}+</div>
+                            <div>Quartiers</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- How it works -->
+        <div class="row my-5">
+            <div class="col-md-12">
+                <h2 class="section-title text-center">Comment ça marche</h2>
+            </div>
+            <div class="col-md-4 text-center">
+                <a href="#recher" style="text-decoration: none; color: black;">
+                    <div class="category-icon mx-auto mb-3">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h5>1. Recherchez</h5>
+                    <p class="text-muted">Trouvez la propriété qui correspond à vos critères grâce à notre moteur de recherche avancé.</p>
+                </a>
+            </div>
+            <div class="col-md-4 text-center">
+                <div class="category-icon mx-auto mb-3">
+                    <i class="fas fa-envelope"></i>
+                </div>
+                <h5>2. Contactez</h5>
+                <p class="text-muted">Entrez en contact directement avec le propriétaire ou l'agence pour plus d'informations.</p>
+            </div>
+            <div class="col-md-4 text-center">
+                <div class="category-icon mx-auto mb-3">
+                    <i class="fas fa-home"></i>
+                </div>
+                <h5>3. Visitez</h5>
+                <p class="text-muted">Organisez une visite et trouvez la propriété de vos rêves en quelques étapes simples.</p>
+            </div>
+        </div>
+    </div>
+
+    {% endblock %}    
+
+
+{% else %}
+
+    {% extends "base.html" %}
+
+    {% block title %}Contact{% endblock %}
+
+    {% block content %}
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}"> 
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <h1 class="display-5 fw-bold mb-3">Trouvez votre maison idéale</h1>
+            <p class="lead mb-4">Des milliers de propriétés vous attendent. Location, vente, achat, tout est là.</p>
+            
+            <div class="search-box">
+                <form class="d-flex mx-auto search-bar" method="get" action="{{ url_for('search') }}" role="search">    
+                    <div class="input-group">
+                        <input id="recher" name="q" type="text" required class="form-control" placeholder="Rechercher par ville, quartier, type de bien...">
+                        <button   on class="btn btn-primary" type="submit">
+                            <i class="fas fa-search me-2"></i> Rechercher
+                        </button>
+                    </div>
+                </form>    
+                <!-- <div class="row mt-3">
+                    <div class="col-md-4 mb-2">
+                        <select class="form-select form-select-sm">
+                            <option selected>Type de transaction</option>
+                            <option>Location</option>
+                            <option>Vente</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4 mb-2">
+                        <select class="form-select form-select-sm">
+                            <option selected>Type de propriété</option>
+                            <option>Maison</option>
+                            <option>Appartement</option>
+                            <option>Studio</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4 mb-2">
+                        <select class="form-select form-select-sm">
+                            <option selected>Budget max</option>
+                            <option>500 $</option>
+                            <option>1000 $</option>
+                            <option>1500 $</option>
+                        </select>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="container">       
+           <!-- Featured Properties -->
+        <div class="row mb-5">
+            <div class="col-md-12">
+                <div class="d-flex justify-content-between align-items-center">
+                    <h2 class="section-title">Publications récentes</h2>
+                </div>
+            </div>
+         
+    <!-- Property 1 -->
+                {% for house in houses %}
+            <div class="col-md-6 col-lg-3 mb-4">
+                <div class="property-card">
+                    <div class="position-relative">
+                        <!-- Carrousel -->
+                        <div id="carousel{{ house.id }}" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                        {% if house.images %}
+                            {% for img in house.images %}
+                            <div class="carousel-item {% if loop.first %}active{% endif %}">
+                            <img src="{{ url_for('static', filename='uploads/' ~ img.filename) }}"
+                                class="d-block w-100 card-img-top" style="height: 200px; object-fit: cover;">
+                            </div>
+                            {% endfor %}
+                        {% else %}
+                            <div class="carousel-item active">
+                            <img src="{{ url_for('static', filename='defaut.jpg') }}"
+                                class="d-block w-100 card-img-top" style="height: 200px; object-fit: cover;">
+                            </div>
+                        {% endif %}
+                        </div>
+                        {% if house.images|length > 1 %}
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carousel{{ house.id }}" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon"></span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carousel{{ house.id }}" data-bs-slide="next">
+                        <span class="carousel-control-next-icon"></span>
+                        </button>
+                        {% endif %}
+                    </div>
+                        <span class="property-type bg-success">{{ house.type }}</span>
+                    </div>
+                    <div class="property-content">
+                <div class="property-price">{{ house.prix }} $/mois</div>
+                <h5>{{ house.titre }}</h5>
+                <div class="property-location">
+                    <i class="fas fa-map-marker-alt"></i> {{ house.commune }}, {{ house.quartier }}
+                </div>
+                <div class="property-features">
+                    <div class="property-feature">
+                        <i class="fas fa-bed"></i> {{ house.chambre }} chambre
+                    </div>
+                    <div class="property-feature">
+                    <i class="fas fa-bath"></i> {{ house.toilette }} sldb
+                    </div>
+                    <div class="property-feature">
+                        <i class="fas fa-ruler-combined"></i> {{ house.surface }} m²
+                    </div>
+                </div>
+                <p class="text-muted">{{ house.description [:100] }}{% if house.description|length > 100 %}...{% endif %}</p>
+                <div class="d-flex justify-content-between align-items-center">
+                    <small class="text-muted"><i class="fas fa-clock me-1"></i>{{ house.date_creation  }}</small>
+                    <a href="#" class="btn btn-primary btn-sm">Voir détails</a>
+                </div>
+            </div>
+        </div>
+            </div>
+        {% endfor %}
+
+            
+
+            <a href="{{ url_for('house') }}" class="btn btn-outline-primary">Voir tout</a>
+
+
+        <!-- Featured Properties -->
+        <div class="row mb-5">
+            <div class="col-md-12">
+                <div class="d-flex justify-content-between align-items-center">
+                    <h2 class="section-title">Annonces récentes</h2>
+                </div>
+            </div>
+            
+            <div class="row mb-5">
+   <!-- Property 2 -->
+    {% for annonce in annonces %}
+      <div class="col-md-4">
+         <div class="property-card">
+            <div class="property-img">
+               <img src="{{ url_for('static', filename='image/annonces.jpg') }}" class="fas fa-building"  height="100%" width="100%"></img>
+               <span class="property-type" style="background-color: #ffe4e6; color: #e11d48;">{{ annonce.type }}</span>
+            </div>
+            <div class="property-content">
+               <div class="property-price">{{ annonce.budget }} $</div>
+               <h5>{{ annonce.titre }}</h5>
+               <div class="property-location">
+                     <i class="fas fa-map-marker-alt"></i> {{ annonce.commune }}, {{ annonce.quartier }}
+               </div>
+               
+               <p class="text-muted">{{ annonce.description [:100] }}{% if annonce.description|length > 100 %}...{% endif %}</p>
+               <div class="d-flex justify-content-between align-items-center">
+                     <small class="text-muted"><i class="fas fa-clock me-1"></i>{{ annonce.date_creation }}</small>
+                     <a href="#" class="btn btn-primary btn-sm">Voir détails</a>
+               </div>
+            </div>
+         </div>
+      </div>
+    {% endfor %}  
+    </div>    
+
+        <a href="{{ url_for('annonce') }}" class="btn btn-outline-primary">Voir tout</a>
+        
+        <!-- Stats Section -->
+        <div class="stats-section rounded-3">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3 col-6">
+                        <div class="stat-item">
+                            <div class="stat-number">{{ p }}+</div>
+                            <div>Propriétés</div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-6">
+                        <div class="stat-item">
+                            <div class="stat-number">{{ u }}+</div>
+                            <div>Utilisateurs</div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-6">
+                        <div class="stat-item">
+                            <div class="stat-number">{{ c }}</div>
+                            <div>Commune</div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-6">
+                        <div class="stat-item">
+                            <div class="stat-number">{{ q }}+</div>
+                            <div>Quartiers</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- How it works -->
+        <div class="row my-5">
+            <div class="col-md-12">
+                <h2 class="section-title text-center">Comment ça marche</h2>
+            </div>
+            <div class="col-md-4 text-center">
+                <a href="#recher" style="text-decoration: none; color: black;">
+                    <div class="category-icon mx-auto mb-3">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h5>1. Recherchez</h5>
+                    <p class="text-muted">Trouvez la propriété qui correspond à vos critères grâce à notre moteur de recherche avancé.</p>
+                </a>
+            </div>
+            <div class="col-md-4 text-center">
+                <div class="category-icon mx-auto mb-3">
+                    <i class="fas fa-envelope"></i>
+                </div>
+                <h5>2. Contactez</h5>
+                <p class="text-muted">Entrez en contact directement avec le propriétaire ou l'agence pour plus d'informations.</p>
+            </div>
+            <div class="col-md-4 text-center">
+                <div class="category-icon mx-auto mb-3">
+                    <i class="fas fa-home"></i>
+                </div>
+                <h5>3. Visitez</h5>
+                <p class="text-muted">Organisez une visite et trouvez la propriété de vos rêves en quelques étapes simples.</p>
+            </div>
+        </div>
+    </div>
+
+    {% endblock %}    
+    
+{% endif %}
+
+

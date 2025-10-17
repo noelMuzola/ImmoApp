@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Estimation de Prix Immobilier 🏠</title>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #f5f5f5;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 500px;
+      margin: 60px auto;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      padding: 30px;
+    }
+    h2 {
+      text-align: center;
+      color: #2b2b2b;
+    }
+    label {
+      display: block;
+      margin-top: 10px;
+      font-weight: 600;
+    }
+    select, input {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+    }
+    button {
+      width: 100%;
+      margin-top: 20px;
+      padding: 12px;
+      border: none;
+      background: #0078ff;
+      color: white;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #005fcc;
+    }
+    .result {
+      margin-top: 20px;
+      text-align: center;
+      font-size: 18px;
+      color: green;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>💰 Estimation du prix d'une maison</h2>
+    
+    <label for="commune">Commune :</label>
+    <select id="commune"></select>
+
+    <label for="quartier">Quartier :</label>
+    <select id="quartier"></select>
+
+    <label for="chambre">Chambres :</label>
+    <input type="number" id="chambre" min="1" value="2">
+
+    <label for="cuisine">Cuisines :</label>
+    <input type="number" id="cuisine" min="0" value="1">
+
+    <label for="salon">Salons :</label>
+    <input type="number" id="salon" min="0" value="1">
+
+    <label for="toilette">Toilettes intérieures :</label>
+    <input type="number" id="toilette" min="0" value="1">
+
+    <label for="design">Design (1 à 10) :</label>
+    <input type="number" id="design" min="1" max="10" value="5">
+
+    <button onclick="estimerPrix()">Estimer le prix</button>
+
+    <div class="result" id="result"></div>
+  </div>
+
+  <script>
+    // Charger les valeurs possibles depuis l'API
+    async function chargerOptions() {
+      const response = await fetch("http://127.0.0.1:5000/options");
+      const data = await response.json();
+
+      const communeSelect = document.getElementById("commune");
+      const quartierSelect = document.getElementById("quartier");
+
+      data.communes.forEach(c => {
+        const opt = document.createElement("option");
+        opt.value = c;
+        opt.textContent = c;
+        communeSelect.appendChild(opt);
+      });
+
+      data.quartiers.forEach(q => {
+        const opt = document.createElement("option");
+        opt.value = q;
+        opt.textContent = q;
+        quartierSelect.appendChild(opt);
+      });
+    }
+
+    async function estimerPrix() {
+      const donnees = {
+        Commune: document.getElementById("commune").value,
+        Quartier: document.getElementById("quartier").value,
+        Chambre: parseInt(document.getElementById("chambre").value),
+        Cuisine: parseInt(document.getElementById("cuisine").value),
+        Salon: parseInt(document.getElementById("salon").value),
+        "Toilette int": parseInt(document.getElementById("toilette").value),
+        Design: parseInt(document.getElementById("design").value)
+      };
+
+      const response = await fetch("http://127.0.0.1:5000/predict", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(donnees)
+      });
+
+      const result = await response.json();
+      const resultDiv = document.getElementById("result");
+
+      if (result.success) {
+        resultDiv.textContent = "🏡 Prix estimé : " + result.prix_estime.toLocaleString() + " $";
+        resultDiv.style.color = "green";
+      } else {
+        resultDiv.textContent = "Erreur : " + result.message;
+        resultDiv.style.color = "red";
+      }
+    }
+
+    chargerOptions();
+  </script>
+</body>
+</html>

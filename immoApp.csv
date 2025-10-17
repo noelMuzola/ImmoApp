@@ -1,0 +1,1001 @@
+1;Commune;Quartier;Chambre;Cuisine;Salon;Toilette int;Design;Prix
+2;Lemba;echangeur;1;0;1;1;8;150
+3;Lemba;terminus;3;1;1;0;7;340
+4;Lemba;salongo;5;1;1;1;7;550
+5;Ngaliema;mont fleury;3;1;1;1;7;300
+6;Ngaliema;ma campagne;2;1;1;1;7;250
+7;Lemba;salongo;2;1;1;0;6;200
+8;Lemba;terminus;4;1;1;1;8.5;600
+9;Kimbanseke;mokali;3;1;1;0;5;200
+10;Kimbanseke;kingasani;2;1;1;1;5;120
+11;Kimbanseke;kingasani;1;0;0;0;3;40
+12;Ngaliema;ma campagne;2;0;1;1;5;120
+13;Ngaliema;ma campagne;3;1;1;1;8;400
+14;Ngaliema;mont fleury;1;0;0;0;7.5;110
+15;Ngaliema;Anciens combatant;3;1;1;1;9;550
+16;Lemba;echangeur;2;0;1;0;8;150
+17;Lemba;salongo;2;1;1;0;6;150
+18;Lemba;echangeur;2;1;1;1;6;150
+19;Lemba;mandradele;3;1;1;1;7;250
+20;Ngaliema;mont fleury;1;0;0;0;7;80
+21;Lemba;salongo;3;1;1;1;8;350
+22;Ngaliema;ma campagne;2;0;1;1;7;200
+23;Kimbanseke;kingasani;4;1;1;1;6;300
+24;Kimbanseke;mokali;4;1;1;1;8;450
+25;Lemba;mandradele;1;0;0;0;6;70
+26;Lemba;salongo;2;0;1;1;6;140
+27;Ngaliema;mont fleury;5;1;1;1;9;1400
+28;Ngaliema;ma campagne;5;1;1;1;9;2000
+29;Ngaliema;Anciens combatant;4;1;1;1;9;1500
+30;Kimbanseke;kingasani;2;1;1;1;7;150
+31;Ngaliema;delvaux;1;1;1;1;9;200
+32;Lemba;echangeur;2;1;1;1;8;280
+33;Kimbanseke;mokali;3;1;1;1;8;350
+34;Kimbanseke;revolution;5;1;1;1;8;500
+35;Kimbanseke;mokali;1;0;0;1;5;60
+36;Lemba;mandradele;1;0;1;0;7;90
+37;Kimbanseke;kingasani;2;1;1;1;7;220
+38;Kimbanseke;kingasani;3;1;1;1;7;300
+39;Lemba;salongo;2;1;1;1;8;250
+40;Lemba;echangeur;2;1;1;1;9;300
+41;Ngaliema;Anciens combatant;3;1;1;1;8.5;600
+42;Ngaliema;delvaux;2;1;1;1;9;380
+43;Kimbanseke;revolution;2;0;1;0;6;100
+44;Lemba;echangeur;4;1;1;1;7;550
+45;Kimbanseke;kingasani;2;1;1;1;7;150
+46;Ngaliema;ma campagne;1;1;1;1;6;150
+47;Ngaliema;Anciens combatant;1;0;0;0;6;100
+48;Kimbanseke;mikondo;3;1;1;1;8;250
+49;Lemba;terminus;3;1;1;0;7;350
+50;Ngaliema;ma campagne;1;1;1;1;7;150
+51;Ngaliema;mont fleury;1;1;1;1;8;100
+52;Ngaliema;mont fleury;2;1;1;1;8;250
+53;Kimbanseke;mokali;3;1;1;1;7;250
+54;Kimbanseke;kingasani;4;1;1;1;8;350
+55;Lemba;mandradele;2;1;1;1;7;200
+56;Kimbanseke;revolution;1;0;0;0;7;70
+57;Kimbanseke;mikondo;1;0;0;0;5;50
+58;Kimbanseke;kingasani;3;1;1;0;8;250
+59;Lemba;terminus;3;1;1;1;8;340
+60;Ngaliema;delvaux;1;1;1;1;9;150
+61;Kimbanseke;mikondo;1;0;0;0;5;50
+62;Lemba;salongo;2;1;1;0;7;200
+63;Lemba;salongo;2;1;1;1;7;250
+64;Kimbanseke;revolution;2;1;1;1;6;150
+65;Ngaliema;delvaux;2;1;1;1;9;250
+66;Kimbanseke;kingasani;4;1;1;1;8;300
+67;Kimbanseke;mokali;2;1;1;1;6;150
+68;Kimbanseke;kingasani;1;1;1;1;8;100
+69;Ngaliema;delvaux;2;1;1;1;8;200
+70;Lemba;terminus;5;1;1;1;8.5;750
+71;Ngaliema;Anciens combatant;3;1;1;1;8.5;400
+72;Lemba;mandradele;1;1;1;0;6;120
+73;Kimbanseke;revolution;1;1;1;1;7;100
+74;Kimbanseke;kingasani;2;1;1;1;8;150
+75;Ngaliema;ma campagne;3;1;1;1;8;800
+76;Ngaliema;Anciens combatant;2;0;1;1;6;200
+77;Ngaliema;ma campagne;5;1;1;1;8;1400
+78;Lemba;echangeur;3;1;1;1;7;290
+79;Kimbanseke;mokali;2;1;1;1;4;100
+80;Kimbanseke;mokali;1;1;1;1;5;100
+81;Kimbanseke;kingasani;2;1;1;0;7;150
+82;Kimbanseke;revolution;3;1;1;1;7;300
+83;Lemba;mandradele;2;1;1;1;7;200
+84;Lemba;salongo;4;1;1;1;8;300
+85;Ngaliema;delvaux;4;1;1;1;8;1200
+86;Kimbanseke;mokali;2;0;1;0;5;100
+87;Lemba;echangeur;3;1;1;1;7;450
+88;Lemba;echangeur;2;1;1;1;8;250
+89;Kimbanseke;mokali;3;1;1;1;7;200
+90;Kimbanseke;mikondo;2;1;1;1;7;150
+91;Kimbanseke;mokali;2;1;1;1;7;150
+92;Kimbanseke;kingasani;1;0;0;0;5;40
+93;Ngaliema;ma campagne;6;1;1;1;9;1700
+94;Ngaliema;mont fleury;5;1;1;1;8;1200
+95;Lemba;salongo;4;1;1;1;8;600
+96;Kimbanseke;mokali;1;1;1;1;6;100
+97;Ngaliema;mont fleury;2;1;1;1;7;300
+98;Lemba;terminus;3;1;1;1;8;400
+99;Ngaliema;delvaux;2;1;1;1;8;250
+100;Lemba;mandradele;4;1;1;1;8;700
+101;Ngaliema;Anciens combatant;8;1;1;1;9;2500
+102;Lemba;echangeur;1;1;1;1;7;120
+103;Kimbanseke;mikondo;1;1;1;0;7;90
+104;Ngaliema;Anciens combatant;1;0;1;1;7;120
+105;Lemba;echangeur;1;0;0;0;6;80
+106;Ngaliema;delvaux;2;1;1;1;8;250
+107;Kimbanseke;mikondo;1;0;1;0;8;80
+108;Ngaliema;mont fleury;4;1;1;1;7;600
+109;Lemba;mandradele;2;0;1;0;7;170
+110;Kimbanseke;revolution;1;1;1;1;7;100
+111;Kimbanseke;revolution;1;1;1;0;7;90
+112;Lemba;mandradele;1;0;1;1;8;140
+113;Kimbanseke;mokali;1;0;0;0;6;60
+114;Lemba;salongo;3;1;1;1;8;400
+115;Ngaliema;Anciens combatant;3;1;1;1;8;540
+116;Kimbanseke;kingasani;2;0;1;1;7;100
+117;Kimbanseke;kingasani;1;0;0;0;6;50
+118;Ngaliema;Anciens combatant;4;1;1;1;8;700
+119;Lemba;salongo;4;1;1;1;7;500
+120;Ngaliema;ma campagne;2;1;1;1;8;300
+121;Kimbanseke;mokali;1;0;0;0;6;50
+122;Ngaliema;delvaux;2;1;1;1;9;450
+123;Lemba;mandradele;1;1;1;0;8;130
+124;Kimbanseke;mikondo;1;0;1;1;7;90
+125;Ngaliema;delvaux;1;1;1;1;9;220
+126;Lemba;terminus;3;1;1;1;9;500
+127;Kimbanseke;revolution;3;1;1;1;8;300
+128;Lemba;echangeur;1;0;1;1;8;100
+129;Ngaliema;mont fleury;3;1;1;1;8;900
+130;Lemba;echangeur;4;1;1;1;7;600
+131;Kimbanseke;mokali;2;1;1;0;6;100
+132;Ngaliema;ma campagne;2;1;1;1;7;350
+133;Lemba;mandradele;1;0;0;0;7;90
+134;Kimbanseke;mokali;2;1;1;1;7;200
+135;Lemba;salongo;2;1;1;0;8;280
+136;Kimbanseke;mikondo;1;0;1;1;1;100
+137;Kimbanseke;mikondo;1;0;0;0;6;60
+138;Kimbanseke;revolution;1;1;1;1;8;100
+139;Ngaliema;ma campagne;4;1;1;1;8;850
+140;Lemba;mandradele;2;0;1;1;7;170
+141;Kimbanseke;mokali;2;0;1;0;6;100
+142;Lemba;echangeur;6;1;1;1;9;1100
+143;Ngaliema;mont fleury;2;1;1;1;8;300
+144;Kimbanseke;revolution;1;0;0;1;7;80
+145;Kimbanseke;mokali;3;1;1;0;8;150
+146;Ngaliema;Anciens combatant;4;1;1;1;8;550
+147;Kimbanseke;kingasani;1;1;1;0;7;80
+148;Ngaliema;delvaux;2;1;1;1;8;300
+149;Lemba;echangeur;1;0;0;0;7;90
+150;Kimbanseke;revolution;1;1;1;1;5;90
+151;Lemba;salongo;3;1;1;0;7;250
+152;Lemba;echangeur;2;1;1;1;7;220
+153;Lemba;terminus;3;1;1;1;7;320
+154;Lemba;salongo;4;1;1;1;8;550
+155;Ngaliema;mont fleury;2;1;1;1;7;280
+156;Ngaliema;ma campagne;3;1;1;1;8;450
+157;Lemba;salongo;2;1;1;0;6;180
+158;Lemba;terminus;4;1;1;1;8;580
+159;Kimbanseke;mokali;3;1;1;0;5;190
+160;Kimbanseke;kingasani;2;1;1;1;5;110
+161;Kimbanseke;kingasani;1;0;0;0;3;35
+162;Ngaliema;ma campagne;2;0;1;1;5;110
+163;Ngaliema;ma campagne;3;1;1;1;8;380
+164;Ngaliema;mont fleury;1;0;0;0;7.5;100
+165;Ngaliema;Anciens combatant;3;1;1;1;9;520
+166;Lemba;echangeur;2;0;1;0;8;140
+167;Lemba;salongo;2;1;1;0;6;140
+168;Lemba;echangeur;2;1;1;1;6;140
+169;Lemba;mandradele;3;1;1;1;7;230
+170;Ngaliema;mont fleury;1;0;0;0;7;75
+171;Lemba;salongo;3;1;1;1;8;330
+172;Ngaliema;ma campagne;2;0;1;1;7;190
+173;Kimbanseke;kingasani;4;1;1;1;6;280
+174;Kimbanseke;mokali;4;1;1;1;8;430
+175;Lemba;mandradele;1;0;0;0;6;65
+176;Lemba;salongo;2;0;1;1;6;130
+177;Ngaliema;mont fleury;5;1;1;1;9;1350
+178;Ngaliema;ma campagne;5;1;1;1;9;1900
+179;Ngaliema;Anciens combatant;4;1;1;1;9;1450
+180;Kimbanseke;kingasani;2;1;1;1;7;140
+181;Ngaliema;delvaux;1;1;1;1;9;190
+182;Lemba;echangeur;2;1;1;1;8;270
+183;Kimbanseke;mokali;3;1;1;1;8;340
+184;Kimbanseke;revolution;5;1;1;1;8;480
+185;Kimbanseke;mokali;1;0;0;1;5;55
+186;Lemba;mandradele;1;0;1;0;7;85
+187;Kimbanseke;kingasani;2;1;1;1;7;210
+188;Kimbanseke;kingasani;3;1;1;1;7;290
+189;Lemba;salongo;2;1;1;1;8;240
+190;Lemba;echangeur;2;1;1;1;9;290
+191;Ngaliema;Anciens combatant;3;1;1;1;8.5;580
+192;Ngaliema;delvaux;2;1;1;1;9;370
+193;Kimbanseke;revolution;2;0;1;0;6;95
+194;Lemba;echangeur;4;1;1;1;7;530
+195;Kimbanseke;kingasani;2;1;1;1;7;145
+196;Ngaliema;ma campagne;1;1;1;1;6;145
+197;Ngaliema;Anciens combatant;1;0;0;0;6;95
+198;Kimbanseke;mikondo;3;1;1;1;8;240
+199;Lemba;terminus;3;1;1;0;7;340
+200;Ngaliema;ma campagne;1;1;1;1;7;145
+201;Ngaliema;mont fleury;1;1;1;1;8;95
+202;Ngaliema;mont fleury;2;1;1;1;8;240
+203;Kimbanseke;mokali;3;1;1;1;7;240
+204;Kimbanseke;kingasani;4;1;1;1;8;340
+205;Lemba;mandradele;2;1;1;1;7;190
+206;Kimbanseke;revolution;1;0;0;0;7;65
+207;Kimbanseke;mikondo;1;0;0;0;5;45
+208;Kimbanseke;kingasani;3;1;1;0;8;240
+209;Lemba;terminus;3;1;1;1;8;330
+210;Ngaliema;delvaux;1;1;1;1;9;145
+211;Kimbanseke;mikondo;1;0;0;0;5;45
+212;Lemba;salongo;2;1;1;0;7;190
+213;Lemba;salongo;2;1;1;1;7;240
+214;Kimbanseke;revolution;2;1;1;1;6;145
+215;Ngaliema;delvaux;2;1;1;1;9;240
+216;Kimbanseke;kingasani;4;1;1;1;8;290
+217;Kimbanseke;mokali;2;1;1;1;6;145
+218;Kimbanseke;kingasani;1;1;1;1;8;95
+219;Ngaliema;delvaux;2;1;1;1;8;190
+220;Lemba;terminus;5;1;1;1;8.5;720
+221;Ngaliema;Anciens combatant;3;1;1;1;8.5;390
+222;Lemba;mandradele;1;1;1;0;6;115
+223;Kimbanseke;revolution;1;1;1;1;7;95
+224;Kimbanseke;kingasani;2;1;1;1;8;145
+225;Ngaliema;ma campagne;3;1;1;1;8;770
+226;Ngaliema;Anciens combatant;2;0;1;1;6;190
+227;Ngaliema;ma campagne;5;1;1;1;8;1350
+228;Lemba;echangeur;3;1;1;1;7;280
+229;Kimbanseke;mokali;2;1;1;1;4;95
+230;Kimbanseke;mokali;1;1;1;1;5;95
+231;Kimbanseke;kingasani;2;1;1;0;7;145
+232;Kimbanseke;revolution;3;1;1;1;7;290
+233;Lemba;mandradele;2;1;1;1;7;190
+234;Lemba;salongo;4;1;1;1;8;290
+235;Ngaliema;delvaux;4;1;1;1;8;1150
+236;Kimbanseke;mokali;2;0;1;0;5;95
+237;Lemba;echangeur;3;1;1;1;7;440
+238;Lemba;echangeur;2;1;1;1;8;240
+239;Kimbanseke;mokali;3;1;1;1;7;190
+240;Kimbanseke;mikondo;2;1;1;1;7;145
+241;Kimbanseke;mokali;2;1;1;1;7;145
+242;Kimbanseke;kingasani;1;0;0;0;5;35
+243;Ngaliema;ma campagne;6;1;1;1;9;1650
+244;Ngaliema;mont fleury;5;1;1;1;8;1150
+245;Lemba;salongo;4;1;1;1;8;580
+246;Kimbanseke;mokali;1;1;1;1;6;95
+247;Ngaliema;mont fleury;2;1;1;1;7;290
+248;Lemba;terminus;3;1;1;1;8;390
+249;Ngaliema;delvaux;2;1;1;1;8;240
+250;Lemba;mandradele;4;1;1;1;8;680
+251;Ngaliema;Anciens combatant;8;1;1;1;9;2450
+252;Lemba;echangeur;1;1;1;1;7;115
+253;Kimbanseke;mikondo;1;1;1;0;7;85
+254;Ngaliema;Anciens combatant;1;0;1;1;7;115
+255;Lemba;echangeur;1;0;0;0;6;75
+256;Ngaliema;delvaux;2;1;1;1;8;240
+257;Kimbanseke;mikondo;1;0;1;0;8;75
+258;Ngaliema;mont fleury;4;1;1;1;7;580
+259;Lemba;mandradele;2;0;1;0;7;165
+260;Kimbanseke;revolution;1;1;1;1;7;95
+261;Kimbanseke;revolution;1;1;1;0;7;85
+262;Lemba;mandradele;1;0;1;1;8;135
+263;Kimbanseke;mokali;1;0;0;0;6;55
+264;Lemba;salongo;3;1;1;1;8;390
+265;Ngaliema;Anciens combatant;3;1;1;1;8;530
+266;Kimbanseke;kingasani;2;0;1;1;7;95
+267;Kimbanseke;kingasani;1;0;0;0;6;45
+268;Ngaliema;Anciens combatant;4;1;1;1;8;680
+269;Lemba;salongo;4;1;1;1;7;480
+270;Ngaliema;ma campagne;2;1;1;1;8;290
+271;Kimbanseke;mokali;1;0;0;0;6;45
+272;Ngaliema;delvaux;2;1;1;1;9;440
+273;Lemba;mandradele;1;1;1;0;8;125
+274;Kimbanseke;mikondo;1;0;1;1;7;85
+275;Ngaliema;delvaux;1;1;1;1;9;210
+276;Lemba;terminus;3;1;1;1;9;480
+277;Kimbanseke;revolution;3;1;1;1;8;290
+278;Lemba;echangeur;1;0;1;1;8;95
+279;Ngaliema;mont fleury;3;1;1;1;8;880
+280;Lemba;echangeur;4;1;1;1;7;580
+281;Kimbanseke;mokali;2;1;1;0;6;95
+282;Ngaliema;ma campagne;2;1;1;1;7;340
+283;Lemba;mandradele;1;0;0;0;7;85
+284;Kimbanseke;mokali;2;1;1;1;7;190
+285;Lemba;salongo;2;1;1;0;8;270
+286;Kimbanseke;mikondo;1;0;1;1;1;95
+287;Kimbanseke;mikondo;1;0;0;0;6;55
+288;Kimbanseke;revolution;1;1;1;1;8;95
+289;Ngaliema;ma campagne;4;1;1;1;8;820
+290;Lemba;mandradele;2;0;1;1;7;165
+291;Kimbanseke;mokali;2;0;1;0;6;95
+292;Lemba;echangeur;6;1;1;1;9;1080
+293;Ngaliema;mont fleury;2;1;1;1;8;290
+294;Kimbanseke;revolution;1;0;0;1;7;75
+295;Kimbanseke;mokali;3;1;1;0;8;145
+296;Ngaliema;Anciens combatant;4;1;1;1;8;540
+297;Kimbanseke;kingasani;1;1;1;0;7;75
+298;Ngaliema;delvaux;2;1;1;1;8;290
+299;Lemba;echangeur;1;0;0;0;7;85
+300;Kimbanseke;revolution;1;1;1;1;5;85
+301;Lemba;salongo;3;1;1;0;7;240
+302;Ngaliema;delvaux;3;1;1;1;9;650
+303;Lemba;terminus;2;1;1;1;7;300
+304;Kimbanseke;mokali;4;1;1;1;8;420
+305;Ngaliema;ma campagne;4;1;1;1;8;800
+306;Lemba;salongo;1;0;1;0;6;120
+307;Kimbanseke;kingasani;3;1;1;1;7;270
+308;Ngaliema;mont fleury;2;1;1;1;7;260
+309;Lemba;echangeur;3;1;1;1;7;420
+310;Kimbanseke;revolution;2;1;1;1;6;130
+311;Ngaliema;Anciens combatant;2;1;1;1;8;350
+312;Lemba;mandradele;3;1;1;1;7;240
+313;Kimbanseke;mikondo;2;1;1;1;7;140
+314;Ngaliema;delvaux;1;1;1;1;9;180
+315;Lemba;salongo;2;1;1;0;6;160
+316;Kimbanseke;mokali;2;1;1;1;6;140
+317;Ngaliema;ma campagne;3;1;1;1;8;420
+318;Lemba;terminus;4;1;1;1;8;560
+319;Kimbanseke;kingasani;1;0;0;0;3;30
+320;Ngaliema;mont fleury;1;0;0;0;7.5;95
+321;Ngaliema;Anciens combatant;3;1;1;1;9;500
+322;Lemba;echangeur;2;0;1;0;8;130
+323;Lemba;salongo;2;1;1;0;6;130
+324;Lemba;echangeur;2;1;1;1;6;130
+325;Lemba;mandradele;3;1;1;1;7;220
+326;Ngaliema;mont fleury;1;0;0;0;7;70
+327;Lemba;salongo;3;1;1;1;8;310
+328;Ngaliema;ma campagne;2;0;1;1;7;180
+329;Kimbanseke;kingasani;4;1;1;1;6;260
+330;Kimbanseke;mokali;4;1;1;1;8;390
+331;Lemba;mandradele;1;0;0;0;6;55
+332;Lemba;salongo;2;0;1;1;6;115
+333;Ngaliema;mont fleury;5;1;1;1;9;1250
+334;Ngaliema;ma campagne;5;1;1;1;9;1800
+335;Ngaliema;Anciens combatant;4;1;1;1;9;1350
+336;Kimbanseke;kingasani;2;1;1;1;7;125
+337;Ngaliema;delvaux;1;1;1;1;9;165
+338;Lemba;echangeur;2;1;1;1;8;240
+339;Kimbanseke;mokali;3;1;1;1;8;310
+340;Kimbanseke;revolution;5;1;1;1;8;440
+341;Kimbanseke;mokali;1;0;0;1;5;45
+342;Lemba;mandradele;1;0;1;0;7;75
+343;Kimbanseke;kingasani;2;1;1;1;7;190
+344;Kimbanseke;kingasani;3;1;1;1;7;270
+345;Lemba;salongo;2;1;1;1;8;220
+346;Lemba;echangeur;2;1;1;1;9;270
+347;Ngaliema;Anciens combatant;3;1;1;1;8.5;550
+348;Ngaliema;delvaux;2;1;1;1;9;350
+349;Kimbanseke;revolution;2;0;1;0;6;90
+350;Lemba;echangeur;4;1;1;1;7;510
+351;Kimbanseke;kingasani;2;1;1;1;7;135
+352;Ngaliema;ma campagne;1;1;1;1;6;135
+353;Ngaliema;Anciens combatant;1;0;0;0;6;90
+354;Kimbanseke;mikondo;3;1;1;1;8;220
+355;Lemba;terminus;3;1;1;0;7;320
+356;Ngaliema;ma campagne;1;1;1;1;7;135
+357;Ngaliema;mont fleury;1;1;1;1;8;90
+358;Ngaliema;mont fleury;2;1;1;1;8;220
+359;Kimbanseke;mokali;3;1;1;1;7;220
+360;Kimbanseke;kingasani;4;1;1;1;8;320
+361;Lemba;mandradele;2;1;1;1;7;180
+362;Kimbanseke;revolution;1;0;0;0;7;60
+363;Kimbanseke;mikondo;1;0;0;0;5;40
+364;Kimbanseke;kingasani;3;1;1;0;8;220
+365;Lemba;terminus;3;1;1;1;8;310
+366;Ngaliema;delvaux;1;1;1;1;9;135
+367;Kimbanseke;mikondo;1;0;0;0;5;40
+368;Lemba;salongo;2;1;1;0;7;180
+369;Lemba;salongo;2;1;1;1;7;220
+370;Kimbanseke;revolution;2;1;1;1;6;135
+371;Ngaliema;delvaux;2;1;1;1;9;220
+372;Kimbanseke;kingasani;4;1;1;1;8;270
+373;Kimbanseke;mokali;2;1;1;1;6;135
+374;Kimbanseke;kingasani;1;1;1;1;8;90
+375;Ngaliema;delvaux;2;1;1;1;8;180
+376;Lemba;terminus;5;1;1;1;8.5;700
+377;Ngaliema;Anciens combatant;3;1;1;1;8.5;370
+378;Lemba;mandradele;1;1;1;0;6;110
+379;Kimbanseke;revolution;1;1;1;1;7;90
+380;Kimbanseke;kingasani;2;1;1;1;8;135
+381;Ngaliema;ma campagne;3;1;1;1;8;740
+382;Ngaliema;Anciens combatant;2;0;1;1;6;180
+383;Ngaliema;ma campagne;5;1;1;1;8;1300
+384;Lemba;echangeur;3;1;1;1;7;260
+385;Kimbanseke;mokali;2;1;1;1;4;90
+386;Kimbanseke;mokali;1;1;1;1;5;90
+387;Kimbanseke;kingasani;2;1;1;0;7;135
+388;Kimbanseke;revolution;3;1;1;1;7;270
+389;Lemba;mandradele;2;1;1;1;7;180
+390;Lemba;salongo;4;1;1;1;8;270
+391;Ngaliema;delvaux;4;1;1;1;8;1100
+392;Kimbanseke;mokali;2;0;1;0;5;90
+393;Lemba;echangeur;3;1;1;1;7;430
+393;Lemba;echangeur;3;1;1;1;7;430
+394;Lemba;echangeur;2;1;1;1;8;220
+395;Kimbanseke;mokali;3;1;1;1;7;180
+396;Kimbanseke;mikondo;2;1;1;1;7;135
+397;Kimbanseke;mokali;2;1;1;1;7;135
+398;Kimbanseke;kingasani;1;0;0;0;5;30
+399;Ngaliema;ma campagne;6;1;1;1;9;1600
+400;Ngaliema;mont fleury;5;1;1;1;8;1100
+401;Lemba;salongo;4;1;1;1;8;550
+402;Kimbanseke;mokali;1;1;1;1;6;90
+403;Ngaliema;mont fleury;2;1;1;1;7;270
+404;Lemba;terminus;3;1;1;1;8;370
+405;Ngaliema;delvaux;2;1;1;1;8;220
+406;Lemba;mandradele;4;1;1;1;8;650
+407;Ngaliema;Anciens combatant;8;1;1;1;9;2400
+408;Lemba;echangeur;1;1;1;1;7;110
+409;Kimbanseke;mikondo;1;1;1;0;7;80
+410;Ngaliema;Anciens combatant;1;0;1;1;7;110
+411;Lemba;echangeur;1;0;0;0;6;70
+412;Ngaliema;delvaux;2;1;1;1;8;220
+413;Kimbanseke;mikondo;1;0;1;0;8;70
+414;Ngaliema;mont fleury;4;1;1;1;7;550
+415;Lemba;mandradele;2;0;1;0;7;160
+416;Kimbanseke;revolution;1;1;1;1;7;90
+417;Kimbanseke;revolution;1;1;1;0;7;80
+418;Lemba;mandradele;1;0;1;1;8;130
+419;Kimbanseke;mokali;1;0;0;0;6;50
+420;Lemba;salongo;3;1;1;1;8;370
+421;Ngaliema;Anciens combatant;3;1;1;1;8;510
+422;Kimbanseke;kingasani;2;0;1;1;7;90
+423;Kimbanseke;kingasani;1;0;0;0;6;40
+424;Ngaliema;Anciens combatant;4;1;1;1;8;650
+425;Lemba;salongo;4;1;1;1;7;460
+426;Ngaliema;ma campagne;2;1;1;1;8;270
+427;Kimbanseke;mokali;1;0;0;0;6;40
+428;Ngaliema;delvaux;2;1;1;1;9;430
+429;Lemba;mandradele;1;1;1;0;8;120
+430;Kimbanseke;mikondo;1;0;1;1;7;80
+431;Ngaliema;delvaux;1;1;1;1;9;200
+432;Lemba;terminus;3;1;1;1;9;460
+433;Kimbanseke;revolution;3;1;1;1;8;270
+434;Lemba;echangeur;1;0;1;1;8;90
+435;Ngaliema;mont fleury;3;1;1;1;8;850
+436;Lemba;echangeur;4;1;1;1;7;550
+437;Kimbanseke;mokali;2;1;1;0;6;90
+438;Ngaliema;ma campagne;2;1;1;1;7;320
+439;Lemba;mandradele;1;0;0;0;7;80
+440;Kimbanseke;mokali;2;1;1;1;7;180
+441;Lemba;salongo;2;1;1;0;8;250
+442;Kimbanseke;mikondo;1;0;1;1;1;90
+443;Kimbanseke;mikondo;1;0;0;0;6;50
+444;Kimbanseke;revolution;1;1;1;1;8;90
+445;Ngaliema;ma campagne;4;1;1;1;8;790
+446;Lemba;mandradele;2;0;1;1;7;160
+447;Kimbanseke;mokali;2;0;1;0;6;90
+448;Lemba;echangeur;6;1;1;1;9;1050
+449;Ngaliema;mont fleury;2;1;1;1;8;270
+450;Kimbanseke;revolution;1;0;0;1;7;70
+451;Kimbanseke;mokali;3;1;1;0;8;135
+452;Ngaliema;Anciens combatant;4;1;1;1;8;520
+453;Kimbanseke;kingasani;1;1;1;0;7;70
+454;Ngaliema;delvaux;2;1;1;1;8;270
+455;Lemba;echangeur;1;0;0;0;7;80
+456;Kimbanseke;revolution;1;1;1;1;5;80
+457;Lemba;salongo;3;1;1;0;7;230
+458;Ngaliema;delvaux;3;1;1;1;9;620
+459;Lemba;terminus;2;1;1;1;7;290
+460;Kimbanseke;mokali;4;1;1;1;8;400
+461;Ngaliema;ma campagne;4;1;1;1;8;770
+462;Lemba;salongo;1;0;1;0;6;115
+463;Kimbanseke;kingasani;3;1;1;1;7;260
+464;Ngaliema;mont fleury;2;1;1;1;7;250
+465;Lemba;echangeur;3;1;1;1;7;410
+466;Kimbanseke;revolution;2;1;1;1;6;125
+467;Ngaliema;Anciens combatant;2;1;1;1;8;340
+468;Lemba;mandradele;3;1;1;1;7;230
+469;Kimbanseke;mikondo;2;1;1;1;7;135
+470;Ngaliema;delvaux;1;1;1;1;9;170
+471;Lemba;salongo;2;1;1;0;6;155
+472;Kimbanseke;mokali;2;1;1;1;6;135
+473;Ngaliema;ma campagne;3;1;1;1;8;410
+474;Lemba;terminus;4;1;1;1;8;540
+475;Kimbanseke;kingasani;1;0;0;0;3;25
+476;Ngaliema;mont fleury;1;0;0;0;7.5;90
+477;Ngaliema;Anciens combatant;3;1;1;1;9;480
+478;Lemba;echangeur;2;0;1;0;8;125
+479;Lemba;salongo;2;1;1;0;6;125
+480;Lemba;echangeur;2;1;1;1;6;125
+481;Lemba;mandradele;3;1;1;1;7;210
+482;Ngaliema;mont fleury;1;0;0;0;7;65
+483;Lemba;salongo;3;1;1;1;8;300
+484;Ngaliema;ma campagne;2;0;1;1;7;170
+485;Kimbanseke;kingasani;4;1;1;1;6;250
+486;Kimbanseke;mokali;4;1;1;1;8;390
+487;Lemba;mandradele;1;0;0;0;6;55
+488;Lemba;salongo;2;0;1;1;6;115
+489;Ngaliema;mont fleury;5;1;1;1;9;1250
+490;Ngaliema;ma campagne;5;1;1;1;9;1800
+491;Ngaliema;Anciens combatant;4;1;1;1;9;1350
+492;Kimbanseke;kingasani;2;1;1;1;7;125
+493;Ngaliema;delvaux;1;1;1;1;9;165
+494;Lemba;echangeur;2;1;1;1;8;240
+495;Kimbanseke;mokali;3;1;1;1;8;310
+496;Kimbanseke;revolution;5;1;1;1;8;440
+497;Kimbanseke;mokali;1;0;0;1;5;45
+498;Lemba;mandradele;1;0;1;0;7;75
+499;Kimbanseke;kingasani;2;1;1;1;7;190
+500;Kimbanseke;kingasani;3;1;1;1;7;270
+501;Lemba;echangeur;2;1;1;1;7;230
+502;Lemba;terminus;3;1;1;1;7;310
+503;Lemba;salongo;4;1;1;1;8;540
+504;Ngaliema;mont fleury;2;1;1;1;7;270
+505;Ngaliema;ma campagne;3;1;1;1;8;440
+506;Lemba;salongo;2;1;1;0;6;170
+507;Lemba;terminus;4;1;1;1;8;570
+508;Kimbanseke;mokali;3;1;1;0;5;180
+509;Kimbanseke;kingasani;2;1;1;1;5;100
+510;Kimbanseke;kingasani;1;0;0;0;3;32
+511;Ngaliema;ma campagne;2;0;1;1;5;100
+512;Ngaliema;ma campagne;3;1;1;1;8;370
+513;Ngaliema;mont fleury;1;0;0;0;7.5;92
+514;Ngaliema;Anciens combatant;3;1;1;1;9;510
+515;Lemba;echangeur;2;0;1;0;8;120
+516;Lemba;salongo;2;1;1;0;6;120
+517;Lemba;echangeur;2;1;1;1;6;120
+518;Lemba;mandradele;3;1;1;1;7;210
+519;Ngaliema;mont fleury;1;0;0;0;7;68
+520;Lemba;salongo;3;1;1;1;8;300
+521;Ngaliema;ma campagne;2;0;1;1;7;160
+522;Kimbanseke;kingasani;4;1;1;1;6;240
+523;Kimbanseke;mokali;4;1;1;1;8;380
+524;Lemba;mandradele;1;0;0;0;6;58
+525;Lemba;salongo;2;0;1;1;6;110
+526;Ngaliema;mont fleury;5;1;1;1;9;1200
+527;Ngaliema;ma campagne;5;1;1;1;9;1750
+528;Ngaliema;Anciens combatant;4;1;1;1;9;1300
+529;Kimbanseke;kingasani;2;1;1;1;7;115
+530;Ngaliema;delvaux;1;1;1;1;9;160
+531;Lemba;echangeur;2;1;1;1;8;230
+532;Kimbanseke;mokali;3;1;1;1;8;300
+533;Kimbanseke;revolution;5;1;1;1;8;420
+534;Kimbanseke;mokali;1;0;0;1;5;42
+535;Lemba;mandradele;1;0;1;0;7;70
+536;Kimbanseke;kingasani;2;1;1;1;7;180
+537;Kimbanseke;kingasani;3;1;1;1;7;260
+538;Lemba;salongo;2;1;1;1;8;210
+539;Lemba;echangeur;2;1;1;1;9;260
+540;Ngaliema;Anciens combatant;3;1;1;1;8.5;530
+541;Ngaliema;delvaux;2;1;1;1;9;330
+542;Kimbanseke;revolution;2;0;1;0;6;85
+543;Lemba;echangeur;4;1;1;1;7;500
+544;Kimbanseke;kingasani;2;1;1;1;7;125
+545;Ngaliema;ma campagne;1;1;1;1;6;125
+546;Ngaliema;Anciens combatant;1;0;0;0;6;85
+547;Kimbanseke;mikondo;3;1;1;1;8;210
+548;Lemba;terminus;3;1;1;0;7;300
+549;Ngaliema;ma campagne;1;1;1;1;7;125
+550;Ngaliema;mont fleury;1;1;1;1;8;85
+551;Ngaliema;mont fleury;2;1;1;1;8;210
+552;Kimbanseke;mokali;3;1;1;1;7;210
+553;Kimbanseke;kingasani;4;1;1;1;8;300
+554;Lemba;mandradele;2;1;1;1;7;170
+555;Kimbanseke;revolution;1;0;0;0;7;55
+556;Kimbanseke;mikondo;1;0;0;0;5;35
+557;Kimbanseke;kingasani;3;1;1;0;8;210
+558;Lemba;terminus;3;1;1;1;8;300
+559;Ngaliema;delvaux;1;1;1;1;9;125
+560;Kimbanseke;mikondo;1;0;0;0;5;35
+561;Lemba;salongo;2;1;1;0;7;170
+562;Lemba;salongo;2;1;1;1;7;210
+563;Kimbanseke;revolution;2;1;1;1;6;125
+564;Ngaliema;delvaux;2;1;1;1;9;210
+565;Kimbanseke;kingasani;4;1;1;1;8;260
+566;Kimbanseke;mokali;2;1;1;1;6;125
+567;Kimbanseke;kingasani;1;1;1;1;8;85
+568;Ngaliema;delvaux;2;1;1;1;8;170
+569;Lemba;terminus;5;1;1;1;8.5;680
+570;Ngaliema;Anciens combatant;3;1;1;1;8.5;350
+571;Lemba;mandradele;1;1;1;0;6;100
+572;Kimbanseke;revolution;1;1;1;1;7;85
+573;Kimbanseke;kingasani;2;1;1;1;8;125
+574;Ngaliema;ma campagne;3;1;1;1;8;720
+575;Ngaliema;Anciens combatant;2;0;1;1;6;170
+576;Ngaliema;ma campagne;5;1;1;1;8;1250
+577;Lemba;echangeur;3;1;1;1;7;250
+578;Kimbanseke;mokali;2;1;1;1;4;85
+579;Kimbanseke;mokali;1;1;1;1;5;85
+580;Kimbanseke;kingasani;2;1;1;0;7;125
+581;Kimbanseke;revolution;3;1;1;1;7;260
+582;Lemba;mandradele;2;1;1;1;7;170
+583;Lemba;salongo;4;1;1;1;8;260
+584;Ngaliema;delvaux;4;1;1;1;8;1050
+585;Kimbanseke;mokali;2;0;1;0;5;85
+586;Lemba;echangeur;3;1;1;1;7;420
+587;Lemba;echangeur;2;1;1;1;8;210
+588;Kimbanseke;mokali;3;1;1;1;7;170
+589;Kimbanseke;mikondo;2;1;1;1;7;125
+590;Kimbanseke;mokali;2;1;1;1;7;125
+591;Kimbanseke;kingasani;1;0;0;0;5;28
+592;Ngaliema;ma campagne;6;1;1;1;9;1550
+593;Ngaliema;mont fleury;5;1;1;1;8;1050
+594;Lemba;salongo;4;1;1;1;8;530
+595;Kimbanseke;mokali;1;1;1;1;6;85
+596;Ngaliema;mont fleury;2;1;1;1;7;260
+597;Lemba;terminus;3;1;1;1;8;360
+598;Ngaliema;delvaux;2;1;1;1;8;210
+599;Lemba;mandradele;4;1;1;1;8;630
+600;Ngaliema;Anciens combatant;8;1;1;1;9;2350
+601;Lemba;echangeur;1;1;1;1;7;105
+602;Kimbanseke;mikondo;1;1;1;0;7;75
+603;Ngaliema;Anciens combatant;1;0;1;1;7;105
+604;Lemba;echangeur;1;0;0;0;6;65
+605;Ngaliema;delvaux;2;1;1;1;8;210
+606;Kimbanseke;mikondo;1;0;1;0;8;65
+607;Ngaliema;mont fleury;4;1;1;1;7;530
+608;Lemba;mandradele;2;0;1;0;7;150
+609;Kimbanseke;revolution;1;1;1;1;7;85
+610;Kimbanseke;revolution;1;1;1;0;7;75
+611;Lemba;mandradele;1;0;1;1;8;120
+612;Kimbanseke;mokali;1;0;0;0;6;45
+613;Lemba;salongo;3;1;1;1;8;360
+614;Ngaliema;Anciens combatant;3;1;1;1;8;500
+615;Kimbanseke;kingasani;2;0;1;1;7;85
+616;Kimbanseke;kingasani;1;0;0;0;6;35
+617;Ngaliema;Anciens combatant;4;1;1;1;8;630
+618;Lemba;salongo;4;1;1;1;7;450
+619;Ngaliema;ma campagne;2;1;1;1;8;260
+620;Kimbanseke;mokali;1;0;0;0;6;35
+621;Ngaliema;delvaux;2;1;1;1;9;420
+622;Lemba;mandradele;1;1;1;0;8;115
+623;Kimbanseke;mikondo;1;0;1;1;7;75
+624;Ngaliema;delvaux;1;1;1;1;9;190
+625;Lemba;terminus;3;1;1;1;9;450
+626;Kimbanseke;revolution;3;1;1;1;8;260
+627;Lemba;echangeur;1;0;1;1;8;85
+628;Ngaliema;mont fleury;3;1;1;1;8;830
+629;Lemba;echangeur;4;1;1;1;7;530
+630;Kimbanseke;mokali;2;1;1;0;6;85
+631;Ngaliema;ma campagne;2;1;1;1;7;310
+632;Lemba;mandradele;1;0;0;0;7;75
+633;Kimbanseke;mokali;2;1;1;1;7;170
+634;Lemba;salongo;2;1;1;0;8;240
+635;Kimbanseke;mikondo;1;0;1;1;1;85
+636;Kimbanseke;mikondo;1;0;0;0;6;45
+637;Kimbanseke;revolution;1;1;1;1;8;85
+638;Ngaliema;ma campagne;4;1;1;1;8;770
+639;Lemba;mandradele;2;0;1;1;7;150
+640;Kimbanseke;mokali;2;0;1;0;6;85
+641;Lemba;echangeur;6;1;1;1;9;1020
+642;Ngaliema;mont fleury;2;1;1;1;8;260
+643;Kimbanseke;revolution;1;0;0;1;7;65
+644;Kimbanseke;mokali;3;1;1;0;8;125
+645;Ngaliema;Anciens combatant;4;1;1;1;8;510
+646;Kimbanseke;kingasani;1;1;1;0;7;65
+647;Ngaliema;delvaux;2;1;1;1;8;260
+648;Lemba;echangeur;1;0;0;0;7;75
+649;Kimbanseke;revolution;1;1;1;1;5;75
+650;Lemba;salongo;3;1;1;0;7;220
+651;Ngaliema;delvaux;3;1;1;1;9;600
+652;Lemba;terminus;2;1;1;1;7;280
+653;Kimbanseke;mokali;4;1;1;1;8;390
+654;Ngaliema;ma campagne;4;1;1;1;8;750
+655;Lemba;salongo;1;0;1;0;6;110
+656;Kimbanseke;kingasani;3;1;1;1;7;250
+657;Ngaliema;mont fleury;2;1;1;1;7;240
+658;Lemba;echangeur;3;1;1;1;7;400
+659;Kimbanseke;revolution;2;1;1;1;6;120
+660;Ngaliema;Anciens combatant;2;1;1;1;8;330
+661;Lemba;mandradele;3;1;1;1;7;220
+662;Kimbanseke;mikondo;2;1;1;1;7;130
+663;Ngaliema;delvaux;1;1;1;1;9;160
+664;Lemba;salongo;2;1;1;0;6;150
+665;Kimbanseke;mokali;2;1;1;1;6;130
+666;Ngaliema;ma campagne;3;1;1;1;8;400
+667;Lemba;terminus;4;1;1;1;8;530
+668;Kimbanseke;kingasani;1;0;0;0;3;22
+669;Ngaliema;mont fleury;1;0;0;0;7.5;85
+670;Ngaliema;Anciens combatant;3;1;1;1;9;470
+671;Lemba;echangeur;2;0;1;0;8;115
+672;Lemba;salongo;2;1;1;0;6;115
+673;Lemba;echangeur;2;1;1;1;6;115
+674;Lemba;mandradele;3;1;1;1;7;200
+675;Ngaliema;mont fleury;1;0;0;0;7;62
+676;Lemba;salongo;3;1;1;1;8;290
+677;Ngaliema;ma campagne;2;0;1;1;7;155
+678;Kimbanseke;kingasani;4;1;1;1;6;230
+679;Kimbanseke;mokali;4;1;1;1;8;370
+680;Lemba;mandradele;1;0;0;0;6;52
+681;Lemba;salongo;2;0;1;1;6;105
+682;Ngaliema;mont fleury;5;1;1;1;9;1180
+683;Ngaliema;ma campagne;5;1;1;1;9;1720
+684;Ngaliema;Anciens combatant;4;1;1;1;9;1280
+685;Kimbanseke;kingasani;2;1;1;1;7;110
+686;Ngaliema;delvaux;1;1;1;1;9;155
+687;Lemba;echangeur;2;1;1;1;8;220
+688;Kimbanseke;mokali;3;1;1;1;8;290
+689;Kimbanseke;revolution;5;1;1;1;8;410
+690;Kimbanseke;mokali;1;0;0;1;5;40
+691;Lemba;mandradele;1;0;1;0;7;65
+692;Kimbanseke;kingasani;2;1;1;1;7;170
+693;Kimbanseke;kingasani;3;1;1;1;7;250
+694;Lemba;salongo;2;1;1;1;8;200
+695;Lemba;echangeur;2;1;1;1;9;250
+696;Ngaliema;Anciens combatant;3;1;1;1;8.5;510
+697;Ngaliema;delvaux;2;1;1;1;9;320
+698;Kimbanseke;revolution;2;0;1;0;6;80
+699;Lemba;echangeur;4;1;1;1;7;490
+700;Kimbanseke;kingasani;2;1;1;1;7;120
+701;Ngaliema;ma campagne;1;1;1;1;6;120
+702;Ngaliema;Anciens combatant;1;0;0;0;6;80
+703;Kimbanseke;mikondo;3;1;1;1;8;200
+704;Lemba;terminus;3;1;1;0;7;290
+705;Ngaliema;ma campagne;1;1;1;1;7;120
+706;Ngaliema;mont fleury;1;1;1;1;8;80
+707;Ngaliema;mont fleury;2;1;1;1;8;200
+708;Kimbanseke;mokali;3;1;1;1;7;200
+709;Kimbanseke;kingasani;4;1;1;1;8;290
+710;Lemba;mandradele;2;1;1;1;7;160
+711;Kimbanseke;revolution;1;0;0;0;7;50
+712;Kimbanseke;mikondo;1;0;0;0;5;30
+713;Kimbanseke;kingasani;3;1;1;0;8;200
+714;Lemba;terminus;3;1;1;1;8;290
+715;Ngaliema;delvaux;1;1;1;1;9;120
+716;Kimbanseke;mikondo;1;0;0;0;5;30
+717;Lemba;salongo;2;1;1;0;7;160
+718;Lemba;salongo;2;1;1;1;7;200
+719;Kimbanseke;revolution;2;1;1;1;6;120
+720;Ngaliema;delvaux;2;1;1;1;9;200
+721;Kimbanseke;kingasani;4;1;1;1;8;250
+722;Kimbanseke;mokali;2;1;1;1;6;120
+723;Kimbanseke;kingasani;1;1;1;1;8;80
+724;Ngaliema;delvaux;2;1;1;1;8;160
+725;Lemba;terminus;5;1;1;1;8.5;660
+726;Ngaliema;Anciens combatant;3;1;1;1;8.5;330
+727;Lemba;mandradele;1;1;1;0;6;95
+728;Kimbanseke;revolution;1;1;1;1;7;80
+729;Kimbanseke;kingasani;2;1;1;1;8;120
+730;Ngaliema;ma campagne;3;1;1;1;8;700
+731;Ngaliema;Anciens combatant;2;0;1;1;6;160
+732;Ngaliema;ma campagne;5;1;1;1;8;1220
+733;Lemba;echangeur;3;1;1;1;7;240
+734;Kimbanseke;mokali;2;1;1;1;4;80
+735;Kimbanseke;mokali;1;1;1;1;5;80
+736;Kimbanseke;kingasani;2;1;1;0;7;120
+737;Kimbanseke;revolution;3;1;1;1;7;250
+738;Lemba;mandradele;2;1;1;1;7;160
+739;Lemba;salongo;4;1;1;1;8;250
+740;Ngaliema;delvaux;4;1;1;1;8;1020
+741;Kimbanseke;mokali;2;0;1;0;5;80
+742;Lemba;echangeur;3;1;1;1;7;410
+743;Lemba;echangeur;2;1;1;1;8;200
+744;Kimbanseke;mokali;3;1;1;1;7;160
+745;Kimbanseke;mikondo;2;1;1;1;7;120
+746;Kimbanseke;mokali;2;1;1;1;7;120
+747;Kimbanseke;kingasani;1;0;0;0;5;25
+748;Ngaliema;ma campagne;6;1;1;1;9;1500
+749;Ngaliema;mont fleury;5;1;1;1;8;1020
+750;Lemba;salongo;4;1;1;1;8;510
+751;Kimbanseke;mokali;1;1;1;1;6;80
+752;Ngaliema;mont fleury;2;1;1;1;7;250
+753;Lemba;terminus;3;1;1;1;8;350
+754;Ngaliema;delvaux;2;1;1;1;8;200
+755;Lemba;mandradele;4;1;1;1;8;620
+756;Ngaliema;Anciens combatant;8;1;1;1;9;2300
+757;Lemba;echangeur;1;1;1;1;7;100
+758;Kimbanseke;mikondo;1;1;1;0;7;70
+759;Ngaliema;Anciens combatant;1;0;1;1;7;100
+760;Lemba;echangeur;1;0;0;0;6;60
+761;Ngaliema;delvaux;2;1;1;1;8;200
+762;Kimbanseke;mikondo;1;0;1;0;8;60
+763;Ngaliema;mont fleury;4;1;1;1;7;510
+764;Lemba;mandradele;2;0;1;0;7;140
+765;Kimbanseke;revolution;1;1;1;1;7;80
+766;Kimbanseke;revolution;1;1;1;0;7;70
+767;Lemba;mandradele;1;0;1;1;8;110
+768;Kimbanseke;mokali;1;0;0;0;6;40
+769;Lemba;salongo;3;1;1;1;8;350
+770;Ngaliema;Anciens combatant;3;1;1;1;8;490
+771;Kimbanseke;kingasani;2;0;1;1;7;80
+772;Kimbanseke;kingasani;1;0;0;0;6;30
+773;Ngaliema;Anciens combatant;4;1;1;1;8;620
+774;Lemba;salongo;4;1;1;1;7;440
+775;Ngaliema;ma campagne;2;1;1;1;8;250
+776;Kimbanseke;mokali;1;0;0;0;6;30
+777;Ngaliema;delvaux;2;1;1;1;9;410
+778;Lemba;mandradele;1;1;1;0;8;110
+779;Kimbanseke;mikondo;1;0;1;1;7;70
+780;Ngaliema;delvaux;1;1;1;1;9;180
+781;Lemba;terminus;3;1;1;1;9;440
+782;Kimbanseke;revolution;3;1;1;1;8;250
+783;Lemba;echangeur;1;0;1;1;8;80
+784;Ngaliema;mont fleury;3;1;1;1;8;810
+785;Lemba;echangeur;4;1;1;1;7;510
+786;Kimbanseke;mokali;2;1;1;0;6;80
+787;Ngaliema;ma campagne;2;1;1;1;7;300
+788;Lemba;mandradele;1;0;0;0;7;70
+789;Kimbanseke;mokali;2;1;1;1;7;160
+790;Lemba;salongo;2;1;1;0;8;230
+791;Kimbanseke;mikondo;1;0;1;1;1;80
+792;Kimbanseke;mikondo;1;0;0;0;6;40
+793;Kimbanseke;revolution;1;1;1;1;8;80
+794;Ngaliema;ma campagne;4;1;1;1;8;750
+795;Lemba;mandradele;2;0;1;1;7;140
+796;Kimbanseke;mokali;2;0;1;0;6;80
+797;Lemba;echangeur;6;1;1;1;9;1000
+798;Ngaliema;mont fleury;2;1;1;1;8;250
+799;Kimbanseke;revolution;1;0;0;1;7;60
+800;Kimbanseke;mokali;3;1;1;0;8;120
+801;Ngaliema;Anciens combatant;4;1;1;1;8;500
+802;Kimbanseke;kingasani;1;1;1;0;7;60
+803;Ngaliema;delvaux;2;1;1;1;8;250
+804;Lemba;echangeur;1;0;0;0;7;70
+805;Kimbanseke;revolution;1;1;1;1;5;70
+806;Lemba;salongo;3;1;1;0;7;210
+807;Ngaliema;delvaux;3;1;1;1;9;580
+808;Lemba;terminus;2;1;1;1;7;270
+809;Kimbanseke;mokali;4;1;1;1;8;380
+810;Ngaliema;ma campagne;4;1;1;1;8;730
+811;Lemba;salongo;1;0;1;0;6;105
+812;Kimbanseke;kingasani;3;1;1;1;7;240
+813;Ngaliema;mont fleury;2;1;1;1;7;230
+814;Lemba;echangeur;3;1;1;1;7;390
+815;Kimbanseke;revolution;2;1;1;1;6;115
+816;Ngaliema;Anciens combatant;2;1;1;1;8;320
+817;Lemba;mandradele;3;1;1;1;7;210
+818;Kimbanseke;mikondo;2;1;1;1;7;125
+819;Ngaliema;delvaux;1;1;1;1;9;150
+820;Lemba;salongo;2;1;1;0;6;145
+821;Kimbanseke;mokali;2;1;1;1;6;125
+822;Ngaliema;ma campagne;3;1;1;1;8;390
+823;Lemba;terminus;4;1;1;1;8;520
+824;Kimbanseke;kingasani;1;0;0;0;3;20
+825;Ngaliema;mont fleury;1;0;0;0;7.5;80
+826;Ngaliema;Anciens combatant;3;1;1;1;9;460
+827;Lemba;echangeur;2;0;1;0;8;110
+828;Lemba;salongo;2;1;1;0;6;110
+829;Lemba;echangeur;2;1;1;1;6;110
+830;Lemba;mandradele;3;1;1;1;7;190
+831;Ngaliema;mont fleury;1;0;0;0;7;60
+832;Lemba;salongo;3;1;1;1;8;280
+833;Ngaliema;ma campagne;2;0;1;1;7;150
+834;Kimbanseke;kingasani;4;1;1;1;6;220
+835;Kimbanseke;mokali;4;1;1;1;8;360
+836;Lemba;mandradele;1;0;0;0;6;50
+837;Lemba;salongo;2;0;1;1;6;100
+838;Ngaliema;mont fleury;5;1;1;1;9;1150
+839;Ngaliema;ma campagne;5;1;1;1;9;1700
+840;Ngaliema;Anciens combatant;4;1;1;1;9;1250
+841;Kimbanseke;kingasani;2;1;1;1;7;105
+842;Ngaliema;delvaux;1;1;1;1;9;150
+843;Lemba;echangeur;2;1;1;1;8;210
+844;Kimbanseke;mokali;3;1;1;1;8;280
+845;Kimbanseke;revolution;5;1;1;1;8;400
+846;Kimbanseke;mokali;1;0;0;1;5;38
+847;Lemba;mandradele;1;0;1;0;7;60
+848;Kimbanseke;kingasani;2;1;1;1;7;160
+849;Kimbanseke;kingasani;3;1;1;1;7;240
+850;Lemba;salongo;2;1;1;1;8;190
+851;Lemba;echangeur;2;1;1;1;9;240
+852;Ngaliema;Anciens combatant;3;1;1;1;8.5;490
+853;Ngaliema;delvaux;2;1;1;1;9;310
+854;Kimbanseke;revolution;2;0;1;0;6;75
+855;Lemba;echangeur;4;1;1;1;7;480
+856;Kimbanseke;kingasani;2;1;1;1;7;115
+857;Ngaliema;ma campagne;1;1;1;1;6;115
+858;Ngaliema;Anciens combatant;1;0;0;0;6;75
+859;Kimbanseke;mikondo;3;1;1;1;8;190
+860;Lemba;terminus;3;1;1;0;7;280
+861;Ngaliema;ma campagne;1;1;1;1;7;115
+862;Ngaliema;mont fleury;1;1;1;1;8;75
+863;Ngaliema;mont fleury;2;1;1;1;8;190
+864;Kimbanseke;mokali;3;1;1;1;7;190
+865;Kimbanseke;kingasani;4;1;1;1;8;280
+866;Lemba;mandradele;2;1;1;1;7;150
+867;Kimbanseke;revolution;1;0;0;0;7;45
+868;Kimbanseke;mikondo;1;0;0;0;5;25
+869;Kimbanseke;kingasani;3;1;1;0;8;190
+870;Lemba;terminus;3;1;1;1;8;280
+871;Ngaliema;delvaux;1;1;1;1;9;115
+872;Kimbanseke;mikondo;1;0;0;0;5;25
+873;Lemba;salongo;2;1;1;0;7;150
+874;Lemba;salongo;2;1;1;1;7;190
+875;Kimbanseke;revolution;2;1;1;1;6;115
+876;Ngaliema;delvaux;2;1;1;1;9;190
+877;Kimbanseke;kingasani;4;1;1;1;8;240
+878;Kimbanseke;mokali;2;1;1;1;6;115
+879;Kimbanseke;kingasani;1;1;1;1;8;75
+880;Ngaliema;delvaux;2;1;1;1;8;150
+881;Lemba;terminus;5;1;1;1;8.5;640
+882;Ngaliema;Anciens combatant;3;1;1;1;8.5;320
+883;Lemba;mandradele;1;1;1;0;6;90
+884;Kimbanseke;revolution;1;1;1;1;7;75
+885;Kimbanseke;kingasani;2;1;1;1;8;115
+886;Ngaliema;ma campagne;3;1;1;1;8;680
+887;Ngaliema;Anciens combatant;2;0;1;1;6;150
+888;Ngaliema;ma campagne;5;1;1;1;8;1200
+889;Lemba;echangeur;3;1;1;1;7;230
+890;Kimbanseke;mokali;2;1;1;1;4;75
+891;Kimbanseke;mokali;1;1;1;1;5;75
+892;Kimbanseke;kingasani;2;1;1;0;7;115
+893;Kimbanseke;revolution;3;1;1;1;7;240
+894;Lemba;mandradele;2;1;1;1;7;150
+895;Lemba;salongo;4;1;1;1;8;240
+896;Ngaliema;delvaux;4;1;1;1;8;1000
+897;Kimbanseke;mokali;2;0;1;0;5;75
+898;Lemba;echangeur;3;1;1;1;7;400
+899;Lemba;echangeur;2;1;1;1;8;190
+900;Kimbanseke;mokali;3;1;1;1;7;150
+901;Kimbanseke;mikondo;2;1;1;1;7;115
+902;Kimbanseke;mokali;2;1;1;1;7;115
+903;Kimbanseke;kingasani;1;0;0;0;5;22
+904;Ngaliema;ma campagne;6;1;1;1;9;1450
+905;Ngaliema;mont fleury;5;1;1;1;8;1000
+906;Lemba;salongo;4;1;1;1;8;490
+907;Kimbanseke;mokali;1;1;1;1;6;75
+908;Ngaliema;mont fleury;2;1;1;1;7;240
+909;Lemba;terminus;3;1;1;1;8;340
+910;Ngaliema;delvaux;2;1;1;1;8;190
+911;Lemba;mandradele;4;1;1;1;8;610
+912;Ngaliema;Anciens combatant;8;1;1;1;9;2250
+913;Lemba;echangeur;1;1;1;1;7;95
+914;Kimbanseke;mikondo;1;1;1;0;7;65
+915;Ngaliema;Anciens combatant;1;0;1;1;7;95
+916;Lemba;echangeur;1;0;0;0;6;55
+917;Ngaliema;delvaux;2;1;1;1;8;190
+918;Kimbanseke;mikondo;1;0;1;0;8;55
+919;Ngaliema;mont fleury;4;1;1;1;7;490
+920;Lemba;mandradele;2;0;1;0;7;130
+921;Kimbanseke;revolution;1;1;1;1;7;75
+922;Kimbanseke;revolution;1;1;1;0;7;65
+923;Lemba;mandradele;1;0;1;1;8;105
+924;Kimbanseke;mokali;1;0;0;0;6;35
+925;Lemba;salongo;3;1;1;1;8;340
+926;Ngaliema;Anciens combatant;3;1;1;1;8;480
+927;Kimbanseke;kingasani;2;0;1;1;7;75
+928;Kimbanseke;kingasani;1;0;0;0;6;25
+929;Ngaliema;Anciens combatant;4;1;1;1;8;610
+930;Lemba;salongo;4;1;1;1;7;430
+931;Ngaliema;ma campagne;2;1;1;1;8;240
+932;Kimbanseke;mokali;1;0;0;0;6;25
+933;Ngaliema;delvaux;2;1;1;1;9;400
+934;Lemba;mandradele;1;1;1;0;8;105
+935;Kimbanseke;mikondo;1;0;1;1;7;65
+936;Ngaliema;delvaux;1;1;1;1;9;170
+937;Lemba;terminus;3;1;1;1;9;430
+938;Kimbanseke;revolution;3;1;1;1;8;240
+939;Lemba;echangeur;1;0;1;1;8;75
+940;Ngaliema;mont fleury;3;1;1;1;8;800
+941;Lemba;echangeur;4;1;1;1;7;490
+942;Kimbanseke;mokali;2;1;1;0;6;75
+943;Ngaliema;ma campagne;2;1;1;1;7;290
+944;Lemba;mandradele;1;0;0;0;7;65
+945;Kimbanseke;mokali;2;1;1;1;7;150
+946;Lemba;salongo;2;1;1;0;8;220
+947;Kimbanseke;mikondo;1;0;1;1;1;75
+948;Kimbanseke;mikondo;1;0;0;0;6;35
+949;Kimbanseke;revolution;1;1;1;1;8;75
+950;Ngaliema;ma campagne;4;1;1;1;8;730
+951;Lemba;mandradele;2;0;1;1;7;130
+952;Kimbanseke;mokali;2;0;1;0;6;75
+953;Lemba;echangeur;6;1;1;1;9;980
+954;Ngaliema;mont fleury;2;1;1;1;8;240
+955;Kimbanseke;revolution;1;0;0;1;7;55
+956;Kimbanseke;mokali;3;1;1;0;8;115
+957;Ngaliema;Anciens combatant;4;1;1;1;8;490
+958;Kimbanseke;kingasani;1;1;1;0;7;55
+959;Ngaliema;delvaux;2;1;1;1;8;240
+960;Lemba;echangeur;1;0;0;0;7;65
+961;Kimbanseke;revolution;1;1;1;1;5;65
+962;Lemba;salongo;3;1;1;0;7;200
+963;Ngaliema;delvaux;3;1;1;1;9;560
+964;Lemba;terminus;2;1;1;1;7;260
+965;Kimbanseke;mokali;4;1;1;1;8;370
+966;Ngaliema;ma campagne;4;1;1;1;8;710
+967;Lemba;salongo;1;0;1;0;6;100
+968;Kimbanseke;kingasani;3;1;1;1;7;230
+969;Ngaliema;mont fleury;2;1;1;1;7;220
+970;Lemba;echangeur;3;1;1;1;7;380
+971;Kimbanseke;revolution;2;1;1;1;6;110
+972;Ngaliema;Anciens combatant;2;1;1;1;8;310
+973;Lemba;mandradele;3;1;1;1;7;200
+974;Kimbanseke;mikondo;2;1;1;1;7;120
+975;Ngaliema;delvaux;1;1;1;1;9;140
+976;Lemba;salongo;2;1;1;0;6;140
+977;Kimbanseke;mokali;2;1;1;1;6;120
+978;Ngaliema;ma campagne;3;1;1;1;8;380
+979;Lemba;terminus;4;1;1;1;8;510
+980;Kimbanseke;kingasani;1;0;0;0;3;18
+981;Ngaliema;mont fleury;1;0;0;0;7.5;75
+982;Ngaliema;Anciens combatant;3;1;1;1;9;450
+983;Lemba;echangeur;2;0;1;0;8;105
+984;Lemba;salongo;2;1;1;0;6;105
+985;Lemba;echangeur;2;1;1;1;6;105
+986;Lemba;mandradele;3;1;1;1;7;180
+987;Ngaliema;mont fleury;1;0;0;0;7;58
+988;Lemba;salongo;3;1;1;1;8;270
+989;Ngaliema;ma campagne;2;0;1;1;7;145
+990;Kimbanseke;kingasani;4;1;1;1;6;210
+991;Kimbanseke;mokali;4;1;1;1;8;350
+992;Lemba;mandradele;1;0;0;0;6;48
+993;Lemba;salongo;2;0;1;1;6;95
+994;Ngaliema;mont fleury;5;1;1;1;9;1120
+995;Ngaliema;ma campagne;5;1;1;1;9;1680
+996;Ngaliema;Anciens combatant;4;1;1;1;9;1230
+997;Kimbanseke;kingasani;2;1;1;1;7;100
+998;Ngaliema;delvaux;1;1;1;1;9;145
+999;Lemba;echangeur;2;1;1;1;8;200
+1000;Kimbanseke;mokali;3;1;1;1;8;270

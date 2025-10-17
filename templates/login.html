@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connexion - ImmoLuxe</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}"> 
+    
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <a href="{{ url_for('home') }}" class="logo">
+                    <i class="fas fa-home"></i>
+                    ImmoApp
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content - Centré verticalement et horizontalement -->
+    <div class="main-content">
+        <div class="auth-container">
+            <div class="auth-form-container">
+                <div class="auth-header">
+                    <h1>Connexion</h1>
+                    <p>Accédez à votre compte ImmoApp</p>
+                </div>
+                
+                <form class="auth-form" action="{{ url_for('login') }}" method="POST">
+                    <div class="form-group">
+                        <label for="email">Adresse email *</label>
+                        <input type="email" id="email" name="email" required>
+                        <div class="error-message" id="emailError">Veuillez entrer une adresse email valide</div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="password">Mot de passe *</label>
+                        <div class="password-input">
+                            <input type="password" id="password" name="password" required>
+                            <button type="button" class="toggle-password" id="togglePassword">
+                                <i class="far fa-eye"></i>
+                            </button>
+                            <div class="error-message" id="passwordError">Veuillez entrer votre mot de passe</div>
+                        </div>
+                    </div>
+                    
+                    <div class="remember-forgot">
+                        <div class="remember-me">
+                            <input type="checkbox" id="remember" name="remember">
+                            <label for="remember">Se souvenir de moi</label>
+                        </div>
+                        <a href="#" class="forgot-password">Mot de passe oublié ?</a>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary">Se connecter</button>
+                </form>
+                
+                <div class="auth-footer">
+                    <p>Vous n'avez pas de compte ? <a href="{{ url_for('register') }}">Inscrivez-vous</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>ImmoLuxe</h3>
+                    <p>Votre portail immobilier de confiance pour trouver la maison de vos rêves.</p>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Liens rapides</h3>
+                    <ul>
+                        <li><a href="#">Accueil</a></li>
+                        <li><a href="#">Biens</a></li>
+                        <li><a href="#">Publier</a></li>
+                        <li><a href="#">Recherches</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Contact</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Avenue de France, Paris</li>
+                        <li><i class="fas fa-phone"></i> +33 1 23 45 67 89</li>
+                        <li><i class="fas fa-envelope"></i> contact@immoluxe.fr</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 ImmoLuxe. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Fonctionnalité d'affichage/masquage du mot de passe
+        const togglePassword = document.getElementById('togglePassword');
+        const passwordInput = document.getElementById('password');
+        
+        togglePassword.addEventListener('click', function() {
+            const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+            passwordInput.setAttribute('type', type);
+            this.innerHTML = type === 'password' ? '<i class="far fa-eye"></i>' : '<i class="far fa-eye-slash"></i>';
+        });
+        
+        // Validation du formulaire
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            let isValid = true;
+            
+            // Validation des champs requis
+            const email = document.getElementById('email');
+            const password = document.getElementById('password');
+            
+            // Réinitialiser les messages d'erreur
+            document.querySelectorAll('.error-message').forEach(el => {
+                el.style.display = 'none';
+            });
+            document.querySelectorAll('input').forEach(el => {
+                el.classList.remove('error');
+            });
+            
+            // Validation email
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email.value)) {
+                document.getElementById('emailError').style.display = 'block';
+                email.classList.add('error');
+                isValid = false;
+            }
+            
+            // Validation mot de passe
+            if (!password.value) {
+                document.getElementById('passwordError').style.display = 'block';
+                password.classList.add('error');
+                isValid = false;
+            }
+            
+            // Si le formulaire est valide
+            if (isValid) {
+                // Simulation de connexion réussie
+                alert('Connexion réussie! Redirection vers votre tableau de bord...');
+                this.reset();
+            }
+        });
+        
+        // Connexion avec les réseaux sociaux
+        document.querySelectorAll('.social-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const platform = this.classList.contains('google-btn') ? 'Google' : 'Facebook';
+                alert(`Connexion avec ${platform} (Cette fonctionnalité sera pleinement opérationnelle avec le backend)`);
+            });
+        });
+        
+        // Lien mot de passe oublié
+        document.querySelector('.forgot-password').addEventListener('click', function(e) {
+            e.preventDefault();
+            alert('Fonctionnalité de réinitialisation de mot de passe (Cette fonctionnalité sera pleinement opérationnelle avec le backend)');
+        });
+    </script>
+</body>
+</html>
